@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E7205902203881A600BC7348 /* JournalController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7205901203881A600BC7348 /* JournalController.m */; };
+		E72059052038E3EF00BC7348 /* newJEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E72059042038E3EF00BC7348 /* newJEntryViewController.m */; };
+		E7205908203B222E00BC7348 /* dreamSign.m in Sources */ = {isa = PBXBuildFile; fileRef = E7205907203B222E00BC7348 /* dreamSign.m */; };
+		E720590B203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E720590A203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m */; };
+		E720590E203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E720590D203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m */; };
+		E7268D882033899A00051E8C /* newJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7268D872033899A00051E8C /* newJournalViewController.m */; };
+		E7268D8B20378B4B00051E8C /* journalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7268D8A20378B4B00051E8C /* journalOptionsViewController.m */; };
+		E75C211D201E95AA00E7F5C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C211C201E95AA00E7F5C9 /* ViewController.m */; };
+		E75C2120201FE7EB00E7F5C9 /* AlertBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C211F201FE7EB00E7F5C9 /* AlertBox.m */; };
+		E76BFC9F1F81B0BA008FB694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFC9E1F81B0BA008FB694 /* main.m */; };
+		E76BFCA21F81B0BA008FB694 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCA11F81B0BA008FB694 /* AppDelegate.m */; };
+		E76BFCA81F81B0BA008FB694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76BFCA61F81B0BA008FB694 /* Main.storyboard */; };
+		E76BFCAB1F81B0BA008FB694 /* Oneiro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCA91F81B0BA008FB694 /* Oneiro.xcdatamodeld */; };
+		E76BFCAD1F81B0BA008FB694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76BFCAC1F81B0BA008FB694 /* Assets.xcassets */; };
+		E76BFCB01F81B0BA008FB694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76BFCAE1F81B0BA008FB694 /* LaunchScreen.storyboard */; };
+		E76BFCBB1F81B0BA008FB694 /* OneiroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCBA1F81B0BA008FB694 /* OneiroTests.m */; };
+		E76BFCC61F81B0BA008FB694 /* OneiroUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCC51F81B0BA008FB694 /* OneiroUITests.m */; };
+		E76BFCD51F81D50F008FB694 /* DreamJournal.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCD41F81D50F008FB694 /* DreamJournal.m */; };
+		E76BFCD81F81D5C8008FB694 /* DreamJournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCD71F81D5C8008FB694 /* DreamJournalEntry.m */; };
+		E76BFCDB1F85A6AA008FB694 /* DreamCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */; };
+		E7B242BE204203D7008318AA /* UINotificationBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B242BD204203D7008318AA /* UINotificationBanner.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E76BFCB71F81B0BA008FB694 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E76BFC921F81B0BA008FB694 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E76BFC991F81B0BA008FB694;
+			remoteInfo = Oneiro;
+		};
+		E76BFCC21F81B0BA008FB694 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E76BFC921F81B0BA008FB694 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E76BFC991F81B0BA008FB694;
+			remoteInfo = Oneiro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E7205900203881A600BC7348 /* JournalController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JournalController.h; sourceTree = "<group>"; };
+		E7205901203881A600BC7348 /* JournalController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JournalController.m; sourceTree = "<group>"; };
+		E72059032038E3EF00BC7348 /* newJEntryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newJEntryViewController.h; sourceTree = "<group>"; };
+		E72059042038E3EF00BC7348 /* newJEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newJEntryViewController.m; sourceTree = "<group>"; };
+		E7205906203B222E00BC7348 /* dreamSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dreamSign.h; sourceTree = "<group>"; };
+		E7205907203B222E00BC7348 /* dreamSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dreamSign.m; sourceTree = "<group>"; };
+		E7205909203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewEntryBrowserTableViewController.h; sourceTree = "<group>"; };
+		E720590A203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewEntryBrowserTableViewController.m; sourceTree = "<group>"; };
+		E720590C203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JournalEntryCellForTableViewTableViewCell.h; sourceTree = "<group>"; };
+		E720590D203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JournalEntryCellForTableViewTableViewCell.m; sourceTree = "<group>"; };
+		E7268D862033899A00051E8C /* newJournalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newJournalViewController.h; sourceTree = "<group>"; };
+		E7268D872033899A00051E8C /* newJournalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newJournalViewController.m; sourceTree = "<group>"; };
+		E7268D8920378B4B00051E8C /* journalOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = journalOptionsViewController.h; sourceTree = "<group>"; };
+		E7268D8A20378B4B00051E8C /* journalOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = journalOptionsViewController.m; sourceTree = "<group>"; };
+		E75C211B201E95AA00E7F5C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E75C211C201E95AA00E7F5C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E75C211E201FE7EB00E7F5C9 /* AlertBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertBox.h; sourceTree = "<group>"; };
+		E75C211F201FE7EB00E7F5C9 /* AlertBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertBox.m; sourceTree = "<group>"; };
+		E76BFC9A1F81B0BA008FB694 /* Oneiro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oneiro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76BFC9E1F81B0BA008FB694 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E76BFCA01F81B0BA008FB694 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E76BFCA11F81B0BA008FB694 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E76BFCA71F81B0BA008FB694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E76BFCAA1F81B0BA008FB694 /* Oneiro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Oneiro.xcdatamodel; sourceTree = "<group>"; };
+		E76BFCAC1F81B0BA008FB694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E76BFCAF1F81B0BA008FB694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E76BFCB11F81B0BA008FB694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76BFCB61F81B0BA008FB694 /* OneiroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneiroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76BFCBA1F81B0BA008FB694 /* OneiroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneiroTests.m; sourceTree = "<group>"; };
+		E76BFCBC1F81B0BA008FB694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76BFCC11F81B0BA008FB694 /* OneiroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneiroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76BFCC51F81B0BA008FB694 /* OneiroUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneiroUITests.m; sourceTree = "<group>"; };
+		E76BFCC71F81B0BA008FB694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76BFCD31F81D50F008FB694 /* DreamJournal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamJournal.h; sourceTree = "<group>"; };
+		E76BFCD41F81D50F008FB694 /* DreamJournal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamJournal.m; sourceTree = "<group>"; };
+		E76BFCD61F81D5C8008FB694 /* DreamJournalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamJournalEntry.h; sourceTree = "<group>"; };
+		E76BFCD71F81D5C8008FB694 /* DreamJournalEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamJournalEntry.m; sourceTree = "<group>"; };
+		E76BFCD91F85A6AA008FB694 /* DreamCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamCharacter.h; sourceTree = "<group>"; };
+		E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamCharacter.m; sourceTree = "<group>"; };
+		E7B242BC204203D7008318AA /* UINotificationBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UINotificationBanner.h; sourceTree = "<group>"; };
+		E7B242BD204203D7008318AA /* UINotificationBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UINotificationBanner.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E76BFC971F81B0BA008FB694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BFCB31F81B0BA008FB694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BFCBE1F81B0BA008FB694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E76BFC911F81B0BA008FB694 = {
+			isa = PBXGroup;
+			children = (
+				E76BFC9C1F81B0BA008FB694 /* Oneiro */,
+				E76BFCB91F81B0BA008FB694 /* OneiroTests */,
+				E76BFCC41F81B0BA008FB694 /* OneiroUITests */,
+				E76BFC9B1F81B0BA008FB694 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E76BFC9B1F81B0BA008FB694 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E76BFC9A1F81B0BA008FB694 /* Oneiro.app */,
+				E76BFCB61F81B0BA008FB694 /* OneiroTests.xctest */,
+				E76BFCC11F81B0BA008FB694 /* OneiroUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E76BFC9C1F81B0BA008FB694 /* Oneiro */ = {
+			isa = PBXGroup;
+			children = (
+				E76BFCA01F81B0BA008FB694 /* AppDelegate.h */,
+				E76BFCA11F81B0BA008FB694 /* AppDelegate.m */,
+				E76BFCD31F81D50F008FB694 /* DreamJournal.h */,
+				E76BFCD41F81D50F008FB694 /* DreamJournal.m */,
+				E76BFCD61F81D5C8008FB694 /* DreamJournalEntry.h */,
+				E76BFCD71F81D5C8008FB694 /* DreamJournalEntry.m */,
+				E7205906203B222E00BC7348 /* dreamSign.h */,
+				E7205907203B222E00BC7348 /* dreamSign.m */,
+				E76BFCD91F85A6AA008FB694 /* DreamCharacter.h */,
+				E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */,
+				E76BFCA61F81B0BA008FB694 /* Main.storyboard */,
+				E7205909203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.h */,
+				E720590A203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m */,
+				E720590C203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.h */,
+				E720590D203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m */,
+				E72059032038E3EF00BC7348 /* newJEntryViewController.h */,
+				E72059042038E3EF00BC7348 /* newJEntryViewController.m */,
+				E7268D8920378B4B00051E8C /* journalOptionsViewController.h */,
+				E7268D8A20378B4B00051E8C /* journalOptionsViewController.m */,
+				E7205900203881A600BC7348 /* JournalController.h */,
+				E7205901203881A600BC7348 /* JournalController.m */,
+				E7268D862033899A00051E8C /* newJournalViewController.h */,
+				E7268D872033899A00051E8C /* newJournalViewController.m */,
+				E75C211B201E95AA00E7F5C9 /* ViewController.h */,
+				E75C211C201E95AA00E7F5C9 /* ViewController.m */,
+				E75C211E201FE7EB00E7F5C9 /* AlertBox.h */,
+				E75C211F201FE7EB00E7F5C9 /* AlertBox.m */,
+				E76BFCAC1F81B0BA008FB694 /* Assets.xcassets */,
+				E76BFCAE1F81B0BA008FB694 /* LaunchScreen.storyboard */,
+				E76BFCB11F81B0BA008FB694 /* Info.plist */,
+				E76BFCA91F81B0BA008FB694 /* Oneiro.xcdatamodeld */,
+				E76BFC9D1F81B0BA008FB694 /* Supporting Files */,
+				E7B242BC204203D7008318AA /* UINotificationBanner.h */,
+				E7B242BD204203D7008318AA /* UINotificationBanner.m */,
+			);
+			path = Oneiro;
+			sourceTree = "<group>";
+		};
+		E76BFC9D1F81B0BA008FB694 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E76BFC9E1F81B0BA008FB694 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E76BFCB91F81B0BA008FB694 /* OneiroTests */ = {
+			isa = PBXGroup;
+			children = (
+				E76BFCBA1F81B0BA008FB694 /* OneiroTests.m */,
+				E76BFCBC1F81B0BA008FB694 /* Info.plist */,
+			);
+			path = OneiroTests;
+			sourceTree = "<group>";
+		};
+		E76BFCC41F81B0BA008FB694 /* OneiroUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E76BFCC51F81B0BA008FB694 /* OneiroUITests.m */,
+				E76BFCC71F81B0BA008FB694 /* Info.plist */,
+			);
+			path = OneiroUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E76BFC991F81B0BA008FB694 /* Oneiro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76BFCCA1F81B0BA008FB694 /* Build configuration list for PBXNativeTarget "Oneiro" */;
+			buildPhases = (
+				E76BFC961F81B0BA008FB694 /* Sources */,
+				E76BFC971F81B0BA008FB694 /* Frameworks */,
+				E76BFC981F81B0BA008FB694 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Oneiro;
+			productName = Oneiro;
+			productReference = E76BFC9A1F81B0BA008FB694 /* Oneiro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E76BFCB51F81B0BA008FB694 /* OneiroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76BFCCD1F81B0BA008FB694 /* Build configuration list for PBXNativeTarget "OneiroTests" */;
+			buildPhases = (
+				E76BFCB21F81B0BA008FB694 /* Sources */,
+				E76BFCB31F81B0BA008FB694 /* Frameworks */,
+				E76BFCB41F81B0BA008FB694 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E76BFCB81F81B0BA008FB694 /* PBXTargetDependency */,
+			);
+			name = OneiroTests;
+			productName = OneiroTests;
+			productReference = E76BFCB61F81B0BA008FB694 /* OneiroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E76BFCC01F81B0BA008FB694 /* OneiroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76BFCD01F81B0BA008FB694 /* Build configuration list for PBXNativeTarget "OneiroUITests" */;
+			buildPhases = (
+				E76BFCBD1F81B0BA008FB694 /* Sources */,
+				E76BFCBE1F81B0BA008FB694 /* Frameworks */,
+				E76BFCBF1F81B0BA008FB694 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E76BFCC31F81B0BA008FB694 /* PBXTargetDependency */,
+			);
+			name = OneiroUITests;
+			productName = OneiroUITests;
+			productReference = E76BFCC11F81B0BA008FB694 /* OneiroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E76BFC921F81B0BA008FB694 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "David Eastmond";
+				TargetAttributes = {
+					E76BFC991F81B0BA008FB694 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = ZV5G5D4GS4;
+						ProvisioningStyle = Automatic;
+					};
+					E76BFCB51F81B0BA008FB694 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = ZV5G5D4GS4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E76BFC991F81B0BA008FB694;
+					};
+					E76BFCC01F81B0BA008FB694 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = ZV5G5D4GS4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E76BFC991F81B0BA008FB694;
+					};
+				};
+			};
+			buildConfigurationList = E76BFC951F81B0BA008FB694 /* Build configuration list for PBXProject "Oneiro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E76BFC911F81B0BA008FB694;
+			productRefGroup = E76BFC9B1F81B0BA008FB694 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E76BFC991F81B0BA008FB694 /* Oneiro */,
+				E76BFCB51F81B0BA008FB694 /* OneiroTests */,
+				E76BFCC01F81B0BA008FB694 /* OneiroUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E76BFC981F81B0BA008FB694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76BFCB01F81B0BA008FB694 /* LaunchScreen.storyboard in Resources */,
+				E76BFCAD1F81B0BA008FB694 /* Assets.xcassets in Resources */,
+				E76BFCA81F81B0BA008FB694 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BFCB41F81B0BA008FB694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BFCBF1F81B0BA008FB694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E76BFC961F81B0BA008FB694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7268D882033899A00051E8C /* newJournalViewController.m in Sources */,
+				E720590B203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m in Sources */,
+				E7205902203881A600BC7348 /* JournalController.m in Sources */,
+				E75C211D201E95AA00E7F5C9 /* ViewController.m in Sources */,
+				E76BFCD81F81D5C8008FB694 /* DreamJournalEntry.m in Sources */,
+				E76BFCA21F81B0BA008FB694 /* AppDelegate.m in Sources */,
+				E76BFCDB1F85A6AA008FB694 /* DreamCharacter.m in Sources */,
+				E76BFC9F1F81B0BA008FB694 /* main.m in Sources */,
+				E76BFCD51F81D50F008FB694 /* DreamJournal.m in Sources */,
+				E75C2120201FE7EB00E7F5C9 /* AlertBox.m in Sources */,
+				E72059052038E3EF00BC7348 /* newJEntryViewController.m in Sources */,
+				E76BFCAB1F81B0BA008FB694 /* Oneiro.xcdatamodeld in Sources */,
+				E7B242BE204203D7008318AA /* UINotificationBanner.m in Sources */,
+				E7205908203B222E00BC7348 /* dreamSign.m in Sources */,
+				E720590E203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m in Sources */,
+				E7268D8B20378B4B00051E8C /* journalOptionsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BFCB21F81B0BA008FB694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76BFCBB1F81B0BA008FB694 /* OneiroTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76BFCBD1F81B0BA008FB694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76BFCC61F81B0BA008FB694 /* OneiroUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E76BFCB81F81B0BA008FB694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E76BFC991F81B0BA008FB694 /* Oneiro */;
+			targetProxy = E76BFCB71F81B0BA008FB694 /* PBXContainerItemProxy */;
+		};
+		E76BFCC31F81B0BA008FB694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E76BFC991F81B0BA008FB694 /* Oneiro */;
+			targetProxy = E76BFCC21F81B0BA008FB694 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E76BFCA61F81B0BA008FB694 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E76BFCA71F81B0BA008FB694 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E76BFCAE1F81B0BA008FB694 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E76BFCAF1F81B0BA008FB694 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E76BFCC81F81B0BA008FB694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E76BFCC91F81B0BA008FB694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E76BFCCB1F81B0BA008FB694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZV5G5D4GS4;
+				INFOPLIST_FILE = Oneiro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Eastmond.Oneiro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E76BFCCC1F81B0BA008FB694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZV5G5D4GS4;
+				INFOPLIST_FILE = Oneiro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Eastmond.Oneiro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E76BFCCE1F81B0BA008FB694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZV5G5D4GS4;
+				INFOPLIST_FILE = OneiroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Eastmond.OneiroTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oneiro.app/Oneiro";
+			};
+			name = Debug;
+		};
+		E76BFCCF1F81B0BA008FB694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZV5G5D4GS4;
+				INFOPLIST_FILE = OneiroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Eastmond.OneiroTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oneiro.app/Oneiro";
+			};
+			name = Release;
+		};
+		E76BFCD11F81B0BA008FB694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZV5G5D4GS4;
+				INFOPLIST_FILE = OneiroUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Eastmond.OneiroUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Oneiro;
+			};
+			name = Debug;
+		};
+		E76BFCD21F81B0BA008FB694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZV5G5D4GS4;
+				INFOPLIST_FILE = OneiroUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Eastmond.OneiroUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Oneiro;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E76BFC951F81B0BA008FB694 /* Build configuration list for PBXProject "Oneiro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BFCC81F81B0BA008FB694 /* Debug */,
+				E76BFCC91F81B0BA008FB694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76BFCCA1F81B0BA008FB694 /* Build configuration list for PBXNativeTarget "Oneiro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BFCCB1F81B0BA008FB694 /* Debug */,
+				E76BFCCC1F81B0BA008FB694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76BFCCD1F81B0BA008FB694 /* Build configuration list for PBXNativeTarget "OneiroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BFCCE1F81B0BA008FB694 /* Debug */,
+				E76BFCCF1F81B0BA008FB694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76BFCD01F81B0BA008FB694 /* Build configuration list for PBXNativeTarget "OneiroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76BFCD11F81B0BA008FB694 /* Debug */,
+				E76BFCD21F81B0BA008FB694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E76BFCA91F81B0BA008FB694 /* Oneiro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E76BFCAA1F81B0BA008FB694 /* Oneiro.xcdatamodel */,
+			);
+			currentVersion = E76BFCAA1F81B0BA008FB694 /* Oneiro.xcdatamodel */;
+			path = Oneiro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E76BFC921F81B0BA008FB694 /* Project object */;
+}
