@@ -95,10 +95,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView beginUpdates];
+        
         [_pJournalEntries removeObjectAtIndex:[indexPath row]];
+       
         [UINotificationBanner showBannerWithMessage:@"Entry deleted." forDuration:2];
-        [tableView endUpdates];
+        [tableView reloadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
