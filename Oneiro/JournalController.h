@@ -26,4 +26,5 @@
 + (void) debugPrintJournalEntries : (NSString *) forWhatKey;
 
 + (NSString *) getJournalTitle : (NSString *) forWhatKey;
++ (NSMutableArray *) getAllDreamCharacters : (NSString *) forWhatKey;
 @end

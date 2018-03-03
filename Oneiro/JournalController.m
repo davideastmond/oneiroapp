@@ -91,4 +91,30 @@
     NSString *returnTitle = j.Title;
     return returnTitle;
 }
++ (NSMutableArray *) getAllDreamCharacters:(NSString *)forWhatKey
+{
+    DreamJournal *j = [self getArchievedDreamJournal:forWhatKey];
+    NSMutableArray *ret = [[NSMutableArray alloc] init];
+    if (j != nil)
+    {
+    // This function returns an NSMutableArray containing all the dream characters in each entry
+        for (DreamJournalEntry *jEntries in j.journalEntries)
+        {
+            for (DreamCharacter *jChar in jEntries.dreamCharacters)
+            {
+                [ret addObject:jChar];
+            }
+        }
+    }
+    
+    // If the count is zero, return nil, otherwise return an array
+    if (ret.count <= 0)
+    {
+        return nil;
+        
+    } else {
+        return ret;
+    }
+        
+}
 @end
