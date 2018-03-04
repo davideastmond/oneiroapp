@@ -14,6 +14,8 @@
 		E720590E203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E720590D203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m */; };
 		E7268D882033899A00051E8C /* newJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7268D872033899A00051E8C /* newJournalViewController.m */; };
 		E7268D8B20378B4B00051E8C /* journalOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7268D8A20378B4B00051E8C /* journalOptionsViewController.m */; };
+		E73322EA204BABC300E290F4 /* dcListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73322E9204BABC300E290F4 /* dcListViewController.m */; };
+		E73322ED204C31B300E290F4 /* dcListViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E73322EC204C31B300E290F4 /* dcListViewCellTableViewCell.m */; };
 		E75C211D201E95AA00E7F5C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C211C201E95AA00E7F5C9 /* ViewController.m */; };
 		E75C2120201FE7EB00E7F5C9 /* AlertBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C211F201FE7EB00E7F5C9 /* AlertBox.m */; };
 		E76BFC9F1F81B0BA008FB694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFC9E1F81B0BA008FB694 /* main.m */; };
@@ -62,6 +64,10 @@
 		E7268D872033899A00051E8C /* newJournalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newJournalViewController.m; sourceTree = "<group>"; };
 		E7268D8920378B4B00051E8C /* journalOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = journalOptionsViewController.h; sourceTree = "<group>"; };
 		E7268D8A20378B4B00051E8C /* journalOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = journalOptionsViewController.m; sourceTree = "<group>"; };
+		E73322E8204BABC300E290F4 /* dcListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dcListViewController.h; sourceTree = "<group>"; };
+		E73322E9204BABC300E290F4 /* dcListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dcListViewController.m; sourceTree = "<group>"; };
+		E73322EB204C31B300E290F4 /* dcListViewCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dcListViewCellTableViewCell.h; sourceTree = "<group>"; };
+		E73322EC204C31B300E290F4 /* dcListViewCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dcListViewCellTableViewCell.m; sourceTree = "<group>"; };
 		E75C211B201E95AA00E7F5C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E75C211C201E95AA00E7F5C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E75C211E201FE7EB00E7F5C9 /* AlertBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertBox.h; sourceTree = "<group>"; };
@@ -150,6 +156,10 @@
 				E76BFCD91F85A6AA008FB694 /* DreamCharacter.h */,
 				E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */,
 				E76BFCA61F81B0BA008FB694 /* Main.storyboard */,
+				E73322E8204BABC300E290F4 /* dcListViewController.h */,
+				E73322E9204BABC300E290F4 /* dcListViewController.m */,
+				E73322EB204C31B300E290F4 /* dcListViewCellTableViewCell.h */,
+				E73322EC204C31B300E290F4 /* dcListViewCellTableViewCell.m */,
 				E7205909203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.h */,
 				E720590A203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m */,
 				E720590C203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.h */,
@@ -341,12 +351,14 @@
 			files = (
 				E7268D882033899A00051E8C /* newJournalViewController.m in Sources */,
 				E720590B203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m in Sources */,
+				E73322EA204BABC300E290F4 /* dcListViewController.m in Sources */,
 				E7205902203881A600BC7348 /* JournalController.m in Sources */,
 				E75C211D201E95AA00E7F5C9 /* ViewController.m in Sources */,
 				E76BFCD81F81D5C8008FB694 /* DreamJournalEntry.m in Sources */,
 				E76BFCA21F81B0BA008FB694 /* AppDelegate.m in Sources */,
 				E76BFCDB1F85A6AA008FB694 /* DreamCharacter.m in Sources */,
 				E76BFC9F1F81B0BA008FB694 /* main.m in Sources */,
+				E73322ED204C31B300E290F4 /* dcListViewCellTableViewCell.m in Sources */,
 				E76BFCD51F81D50F008FB694 /* DreamJournal.m in Sources */,
 				E75C2120201FE7EB00E7F5C9 /* AlertBox.m in Sources */,
 				E72059052038E3EF00BC7348 /* newJEntryViewController.m in Sources */,

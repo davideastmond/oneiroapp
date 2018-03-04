@@ -19,7 +19,11 @@ typedef enum {
 @property NSString* Name;
 @property (readonly) NSDate* CreateDate;
 @property DreamCharacterGender gender;
+@property NSString* description;
 // - Constructor
 - (id) initWithNameAndGender: (NSString *) dcName
                             : (DreamCharacterGender) dcGender;
+- (id) initWithNameGenderAndDescrition: (NSString *) dcName
+                                gender: (DreamCharacterGender) dcGender
+                           description: (NSString *) dcDesc;
 @end
