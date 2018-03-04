@@ -30,9 +30,13 @@
     //[self DeleteJournalEntryFromSystemForKey:defaultJournalKey]; // Test to default
     //NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:defaultJournalKey];
     
-   
+    // *** test
+    
+    
+    //** end test
     
     DreamJournal *Journal;
+    [JournalController getAllDreamCharacters:defaultJournalKey];
     
     if ([JournalController isSavedJournalPresent:defaultJournalKey] == false)
     {

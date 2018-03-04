@@ -103,6 +103,7 @@
             for (DreamCharacter *jChar in jEntries.dreamCharacters)
             {
                 [ret addObject:jChar];
+                NSLog(@"Character %@", jChar.Name);
             }
         }
     }
