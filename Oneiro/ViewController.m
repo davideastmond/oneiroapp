@@ -207,7 +207,11 @@
 }
 - (IBAction)cmdTest_Tap:(id)sender
 {
-    [UINotificationBanner showBannerWithMessage:@"Your selected an entry" forDuration:3];
+   // ** DEBUG TEST - dream journal deletion // Back up
+    [JournalController resetJournalArchieve:defaultJournalKey];
+    
+    // This will segue to the creation of a new journal file
+    
 }
 
 /*

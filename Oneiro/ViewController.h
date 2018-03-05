@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cmdNewJournalEntry;
 @property (weak, nonatomic) IBOutlet UIButton *cmdCreateNewJournal;
 @property (weak, nonatomic) IBOutlet UIButton *cmdJournalOptions;
-@property (strong, nonatomic) IBOutlet UIButton *cmdTest;
+@property (weak, nonatomic) IBOutlet UIButton *cmdTest;
 
 // These keep track of the current journal properties that can get passed to another view
 @property NSString *currentJournalTitle;
