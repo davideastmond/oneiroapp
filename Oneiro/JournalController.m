@@ -7,6 +7,7 @@
 //
 
 #import "JournalController.h"
+#define backUpJournal @"bckup"
 
 @implementation JournalController
 
@@ -117,5 +118,33 @@
         return ret;
     }
         
+}
++ (void) backUpJournalArchieveForJournal : (DreamJournal *) bckup
+{
+    // Back up the dreamJournal
+    if (bckup != nil)
+    {
+        [self saveArchieveDreamJournal:bckup forWhatKey:backUpJournal];
+        // Save the backup
+        NSLog(@"Back-up journal saved");
+    }
+    else {
+        // An error
+        [UINotificationBanner showBannerWithMessage:@"Error backing up journal" forDuration:3];
+    }
+}
++ (void) resetJournalArchieve:(NSString *)forWhatKey
+{
+    // Deletes and resets the journal archieve
+    DreamJournal *tempBackUp = [self getArchievedDreamJournal:forWhatKey];
+    [self backUpJournalArchieveForJournal:tempBackUp]; // Back up
+    
+    [self deleteJournalArchieve:forWhatKey]; // Delete
+    
+    // Create a default journal
+    NSDate *now = [NSDate date];
+    JournalOwner *owner = [[JournalOwner alloc] initWithOwnerFirstAndLastName:@"Test First Name" withLastName:@"TestLastName" withDateOfBirth:now];
+    DreamJournal *newJ = [[DreamJournal alloc] initWithTitleOwnerAndDefaultEntry:@"New Default Debug Joural" :owner];
+    [self saveArchieveDreamJournal: newJ forWhatKey:forWhatKey];// Replace
 }
 @end

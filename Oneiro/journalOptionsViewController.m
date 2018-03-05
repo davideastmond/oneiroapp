@@ -41,7 +41,7 @@
 {
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
         NSLog(@"Dream Journal has been deleted (test)");
-        
+       
         [JournalController deleteJournalArchieve:defaultJournalKey];
         [_delegate didDeleteJournal]; // Call Delegate Function
         [self dismissViewControllerAnimated:YES completion:nil];

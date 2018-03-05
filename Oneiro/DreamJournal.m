@@ -46,8 +46,13 @@
     
     // Create a default dream character and add it
     
-    DreamCharacter *defaultChar = [[DreamCharacter alloc] initWithNameAndGender:@"default Char" : male];
-    
+    int rnd = arc4random_uniform(3);
+    DreamCharacter *defaultChar;
+    if (rnd == 1){
+    defaultChar = [[DreamCharacter alloc] initWithNameGenderAndDescrition:@"Default Name" gender:female description:@"This is a female default dream character description"];
+    } else  {
+         defaultChar = [[DreamCharacter alloc] initWithNameGenderAndDescrition:@"Default Name" gender:male description:@"This is a a default male dream character description"];
+    }
     [defaultJournalEntry AddDreamCharacter:defaultChar];
     [_journalEntries addObject: defaultJournalEntry]; // Add to the array
     

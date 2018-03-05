@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DreamJournal.h"
+#import "UINotificationBanner.h"
 
 @interface JournalController : NSObject
 {
@@ -25,6 +26,7 @@
 + (NSInteger) getJournalEntryCount : (NSString *) forWhatKey;
 + (void) debugPrintJournalEntries : (NSString *) forWhatKey;
 
++ (void) resetJournalArchieve : (NSString *) forWhatKey;
 + (NSString *) getJournalTitle : (NSString *) forWhatKey;
 + (NSMutableArray *) getAllDreamCharacters : (NSString *) forWhatKey;
 @end

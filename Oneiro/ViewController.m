@@ -153,6 +153,10 @@
         DreamJournal *j = [JournalController getArchievedDreamJournal:defaultJournalKey];
         // Pass the data forward
         tableViewEntryBrowser.pJournalEntries = j.journalEntries; 
+    } else if ([segue.identifier isEqualToString:@"debugNewJ"])
+    {
+        //** This is for debug. Deleted the dream journal archieve
+        // Segue
     }
     /*
     newJournalViewController *newJ = segue.destinationViewController;
