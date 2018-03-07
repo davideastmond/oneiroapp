@@ -14,6 +14,7 @@
 #import "newJEntryViewController.h"
 #import "TableViewEntryBrowserTableViewController.h"
 #import "UINotificationBanner.h"
+#import "Randoms.h"
 
 @interface ViewController : UIViewController <NewJournalCreatedDelegate, JournalOptionsDelegate, NewJournalEntryDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *cmdBrowse;

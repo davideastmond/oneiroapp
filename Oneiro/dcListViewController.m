@@ -63,9 +63,9 @@
     {
         cell.lblDcDesc.text = @"default nil description";
     } else{
+        
         cell.lblDcDesc.text = dc.description;
     }
-    
     return cell;
 }
 
@@ -74,6 +74,7 @@
 }
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [indexPath row] * 30;
+    
+    return [indexPath row] * 75;
 }
 @end

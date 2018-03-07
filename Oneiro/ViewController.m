@@ -31,7 +31,11 @@
     //NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:defaultJournalKey];
     
     // *** test
-    
+    for (int i = 0; i <= 10; i++)
+    {
+      NSString* myChars =  [Randoms randomStringOfLength:8];
+        NSLog(@"Chars %@", myChars);
+    }
     
     //** end test
     

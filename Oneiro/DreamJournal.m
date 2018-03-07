@@ -23,7 +23,15 @@
 {
     if (entryToAdd != nil)
     {
-        [_journalEntries addObject:entryToAdd]; // Add to journal
+        if ([entryToAdd isKindOfClass:[DreamJournalEntry class]])
+        {
+            [_journalEntries addObject:entryToAdd]; // Add to journal
+        } else
+        {
+            // ** Exception
+            NSException *invalidArgumentException = [NSException exceptionWithName:@"InvalidArgumentException" reason:@"Argument does not conform to type 'DreamJournalEntry'" userInfo:nil];
+            @throw invalidArgumentException;
+        }
     }
 }
 - (DreamJournalEntry *)  getJournalEntryForEntryIndex:(int)index
