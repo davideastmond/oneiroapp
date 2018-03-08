@@ -56,8 +56,14 @@
         cell = [[dcListViewCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
+    
     DreamCharacter *dc = [_dcList objectAtIndex:[indexPath row]];
     cell.lblDcName.text = dc.Name;
+    
+    // Change the AddButton Border color and thickness
+    cell.btnAdd.layer.cornerRadius = 1;
+    cell.btnAdd.layer.borderWidth = 2;
+    cell.btnAdd.layer.borderColor = UIColor.blueColor.CGColor;
     
     if (dc.description == nil)
     {
