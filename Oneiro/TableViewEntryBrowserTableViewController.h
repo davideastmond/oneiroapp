@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DreamJournalEntry.h"
+
 #import "newJEntryViewController.h"
+#import "DreamJournalEntry.h"
 #import "JournalController.h"
 #import "UINotificationBanner.h"
+@protocol EditUpdateJournalEntryDelegate;
 @interface TableViewEntryBrowserTableViewController : UITableViewController <EditUpdateJournalEntryDelegate>
 {
    

@@ -61,6 +61,7 @@
     cell.lblEntryTitle.text = _entry.Title;
     [tFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     cell.lblEntryDate.text = [tFormatter stringFromDate:_entry.CreateDate];
+    
     return cell;
 }
 

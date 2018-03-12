@@ -98,12 +98,21 @@
 }
 /*
 #pragma mark - Navigation
-
+*/
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    // We need to
+    if ([segue.identifier isEqualToString:@"toDCListVC"])
+    {
+        // This is the segue that will open up the DreamCharacter list
+        dcListViewController* nextDCCtrl = [[dcListViewController alloc] init];
+        nextDCCtrl = (dcListViewController *) segue.destinationViewController; // Cast
+        nextDCCtrl.dcListForJournalEntry = edit_bundle.JournalEntryReference.dreamCharacters; // Send
+    }
 }
-*/
+
 
 @end

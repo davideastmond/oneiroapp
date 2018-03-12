@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "DreamJournal.h"
 #import "UINotificationBanner.h"
+#import "DreamJournalEntry.h"
+@class DreamJournal;
+@class DreamJournalEntry;
 
 @interface JournalController : NSObject
 {
 }
-
 // Class methods
 + (DreamJournal *) getArchievedDreamJournal : (NSString *) forWhatKey;
 

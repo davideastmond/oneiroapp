@@ -16,7 +16,12 @@
 #import "UINotificationBanner.h"
 #import "Randoms.h"
 
-@interface ViewController : UIViewController <NewJournalCreatedDelegate, JournalOptionsDelegate, NewJournalEntryDelegate>
+
+@class newJEntryViewController;
+@class addNewDreamChar;
+@class newJournalViewController;
+
+@interface ViewController : UIViewController <NewJournalCreatedDelegate, JournalOptionsDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *cmdBrowse;
 @property (weak, nonatomic) IBOutlet UIButton *cmdNewJournalEntry;
 @property (weak, nonatomic) IBOutlet UIButton *cmdCreateNewJournal;

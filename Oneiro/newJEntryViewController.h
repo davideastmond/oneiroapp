@@ -11,8 +11,9 @@
 #import "DreamCharacter.h"
 #import "DreamJournalEntry.h"
 #import "AlertBox.h"
-
-
+#import "dcListViewController.h"
+@class newJEntryViewController;
+@class JournalEditBundle;
 
 typedef enum {
     AddMode =1, EditMode =2

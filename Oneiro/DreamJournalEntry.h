@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DreamCharacter.h"
 #import "dreamSign.h"
+@class DreamCharacter;
 
 // Journal Entries
 @interface DreamJournalEntry : NSObject <NSCoding>

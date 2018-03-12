@@ -29,8 +29,8 @@
     for (int i = 1; i <= len; i++)
     {
         // Characters (including numerals)
-        int alphaValue = [self randomIntegerBetween:65 and:91];
-        int numValue = [self randomIntegerBetween:48 and:58];
+        int alphaValue = [self randomIntegerBetween:65 and:90];
+        int numValue = [self randomIntegerBetween:48 and:57];
         NSInteger numOrLetter = [self randomIntegerBetween:0 and:2];
         
         NSString *charChoice;

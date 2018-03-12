@@ -7,7 +7,6 @@
 //
 
 #import "DreamJournal.h"
-#import "DreamJournalEntry.h"
 
 
 #define kObjectKey @"object"
@@ -57,9 +56,9 @@
     int rnd = arc4random_uniform(3);
     DreamCharacter *defaultChar;
     if (rnd == 1){
-    defaultChar = [[DreamCharacter alloc] initWithNameGenderAndDescrition:@"Default Name" gender:female description:@"This is a female default dream character description"];
+    defaultChar = [[DreamCharacter alloc] initWithNameGenderAndDescription:@"Default Name" gender:female description:@"This is a female default dream character description"];
     } else  {
-         defaultChar = [[DreamCharacter alloc] initWithNameGenderAndDescrition:@"Default Name" gender:male description:@"This is a a default male dream character description"];
+         defaultChar = [[DreamCharacter alloc] initWithNameGenderAndDescription:@"Default Name" gender:male description:@"This is a a default male dream character description"];
     }
     [defaultJournalEntry AddDreamCharacter:defaultChar];
     [_journalEntries addObject: defaultJournalEntry]; // Add to the array

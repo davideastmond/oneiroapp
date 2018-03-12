@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "addNewDreamChar.h"
 #import "DreamJournalEntry.h"
 #import "newJEntryViewController.h"
 #import "JournalController.h"
 #import "UINotificationBanner.h"
-
-@interface dcListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@class addNewDreamChar;
+@class newJEntryViewController;
+@protocol DreamCharacterAddProtocol;
+@interface dcListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DreamCharacterAddProtocol>
 @property (strong, nonatomic) IBOutlet UITableView *dcTable;
-@property NSMutableArray* dcList;
+@property NSMutableArray* dcList; // This is all of the DCs in the entire journal
+@property NSMutableArray* dcListForJournalEntry; // This keeps
+@property (strong, nonatomic) IBOutlet UITableView *tbl_ListOfdcInEntry;
+@property (strong, nonatomic) IBOutlet UIButton *btnAddDC;
+
 @end

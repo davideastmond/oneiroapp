@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Randoms.h"
+#import "JournalController.h"
 
 typedef enum {
     male, female, other
@@ -20,10 +22,11 @@ typedef enum {
 @property (readonly) NSDate* CreateDate;
 @property DreamCharacterGender gender;
 @property NSString* description;
+@property (readonly) NSString* charID;
 // - Constructor
 - (id) initWithNameAndGender: (NSString *) dcName
                             : (DreamCharacterGender) dcGender;
-- (id) initWithNameGenderAndDescrition: (NSString *) dcName
+- (id) initWithNameGenderAndDescription: (NSString *) dcName
                                 gender: (DreamCharacterGender) dcGender
                            description: (NSString *) dcDesc;
 @end

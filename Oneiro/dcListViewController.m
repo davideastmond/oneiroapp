@@ -19,11 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _dcTable.tag = 1;
+    _tbl_ListOfdcInEntry.tag = 2;
     
     // Load the data array
     _dcTable.dataSource = self;
     _dcTable.delegate = self;
+    
     _dcList = [JournalController getAllDreamCharacters:defaultJournalKey];
+    
+   _tbl_ListOfdcInEntry.dataSource = self;
+   _tbl_ListOfdcInEntry.delegate = self;
+    
+    // We need to populate the data of the current characters in this particular journalEntry
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,15 +41,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"add_dc00"])
+    {
+        // Launch the AddDreamCharacter screen
+        addNewDreamChar *addnew = [[addNewDreamChar alloc] init];
+        addnew = (addNewDreamChar *) segue.destinationViewController;
+        addnew.delegate = self;
+    }
 }
-*/
+
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -47,40 +64,79 @@
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    
-    static NSString *cellID = @"dcCell";
-    dcListViewCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    
-    if (cell == nil)
+    if (tableView.tag == 1)
     {
-        cell = [[dcListViewCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
+        static NSString *cellID = @"dcCell";
+        dcListViewCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
-    
-    DreamCharacter *dc = [_dcList objectAtIndex:[indexPath row]];
-    cell.lblDcName.text = dc.Name;
-    
-    // Change the AddButton Border color and thickness
-    cell.btnAdd.layer.cornerRadius = 1;
-    cell.btnAdd.layer.borderWidth = 2;
-    cell.btnAdd.layer.borderColor = UIColor.blueColor.CGColor;
-    
-    if (dc.description == nil)
-    {
-        cell.lblDcDesc.text = @"default nil description";
-    } else{
+        if (cell == nil)
+        {
+            cell = [[dcListViewCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        }
+        DreamCharacter *dc = [_dcList objectAtIndex:[indexPath row]];
+        cell.lblDcName.text = dc.Name;
         
-        cell.lblDcDesc.text = dc.description;
+        // Change the AddButton Border color and thickness
+        cell.btnAdd.layer.cornerRadius = 1;
+        cell.btnAdd.layer.borderWidth = 0.5;
+        cell.btnAdd.layer.borderColor = UIColor.blueColor.CGColor;
+        cell.btnAdd.tag = [indexPath row];
+        if (dc.description == nil)
+        {
+            cell.lblDcDesc.text = @"default nil description";
+        } else{
+            
+            cell.lblDcDesc.text = dc.description;
+        }
+        NSLog(@"CellForIndex at path. Tag is %lu", tableView.tag);
+        return cell;
+    } else
+    {
+        // This is the dcEntryList
+        static NSString *cellID = @"dcCell2";
+        
+        dcEntryListView *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+        if (cell == nil)
+        {
+            cell = [[dcEntryListView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        }
+        DreamCharacter *indexChar = _dcListForJournalEntry[indexPath.row];
+        cell.dcEntry_Name.text = indexChar.Name;
+        cell.dcEntry_Desc.text = indexChar.description;
+                                                   
+        return cell;
     }
-    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dcList.count;
+    
+    if (tableView.tag == 1)
+    {
+        return _dcList.count;
+    } else {
+        return _dcListForJournalEntry.count;
+    }
 }
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75;
+    if (tableView.tag == 1) {
+        return 65;
+    } else {
+        return 40;
+    }
     //return [indexPath row] * 75;
 }
+- (IBAction)btnAddDC_Tap:(id)sender {
+    // Add completely new dreamCharacter object -
+    NSLog(@"Add DC - tap");
+}
+
+- (void)DreamCharacterAdded:(DreamCharacter *)characterAdded {
+    //
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"Got the DC to add");
+}
+
+
+
 @end

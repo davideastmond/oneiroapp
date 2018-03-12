@@ -31,16 +31,10 @@
     //NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:defaultJournalKey];
     
     // *** test
-    for (int i = 0; i <= 10; i++)
-    {
-      NSString* myChars =  [Randoms randomStringOfLength:8];
-        NSLog(@"Chars %@", myChars);
-    }
-    
     //** end test
     
     DreamJournal *Journal;
-    [JournalController getAllDreamCharacters:defaultJournalKey];
+
     
     if ([JournalController isSavedJournalPresent:defaultJournalKey] == false)
     {
@@ -81,7 +75,7 @@
     // Deletest the object from memory
      [[NSUserDefaults standardUserDefaults] removeObjectForKey:archKey];
 }
-- (id) createDefaultJournalEntryObject
+- (DreamJournal *) createDefaultJournalEntryObject
 {
     // Creates a default journal entry if none is found
     NSDateComponents *date_comps = [[NSDateComponents alloc] init];
@@ -91,12 +85,11 @@
     [date_comps setYear:1981];
     NSDate *dob = [[NSCalendar currentCalendar] dateFromComponents:date_comps];
     
-    JournalOwner *jOwner =  [[JournalOwner alloc] initWithOwnerFirstAndLastName: @"David" withLastName:@"Eastmond" withDateOfBirth:dob];
+    JournalOwner *jOwner =  [[JournalOwner alloc] initWithOwnerFirstAndLastName: [Randoms randomStringOfLength:6] withLastName:[Randoms randomStringOfLength:8] withDateOfBirth:dob];
     
-    DreamJournal *journal = [[DreamJournal alloc] initWithTitleOwnerAndDefaultEntry:@"default title"
+    DreamJournal *journal = [[DreamJournal alloc] initWithTitleOwnerAndDefaultEntry:[Randoms randomStringOfLength:10]
                                                                                    : jOwner];
-    // DreamCharacter *obj = [[DreamCharacter alloc] initWithNameAndGender:@"david" :male];
-    // [[journal journalEntries] addObject:obj];
+    
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:journal];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:defaultJournalKey];
     
@@ -161,6 +154,14 @@
     {
         //** This is for debug. Deleted the dream journal archieve
         // Segue
+        newJournalViewController *newJ = segue.destinationViewController;
+        newJ.delegate = self;
+        NSLog(@"SegueRegisterNewJournal");
+    } else if ([segue.identifier isEqualToString:@"segue_registerNewJournal"])
+    {
+        newJournalViewController *newJ = segue.destinationViewController;
+        newJ.delegate = self;
+        NSLog(@"SegueRegisterNewJournal");
     }
     /*
     newJournalViewController *newJ = segue.destinationViewController;

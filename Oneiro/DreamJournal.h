@@ -10,6 +10,7 @@
 #import "DreamCharacter.h"
 #import "DreamJournalEntry.h"
 @class JournalOwner;
+@class DreamJournalEntry;
 
 // This is the main class
 @interface DreamJournal : NSObject <NSCoding>
