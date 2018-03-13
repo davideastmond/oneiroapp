@@ -28,12 +28,15 @@
 // We need a method that adds dream characters to the array
 - (void) AddDreamCharacter : (DreamCharacter *) charToAdd;
 - (void) AddDreamSign : (dreamSign *) dreamSignToAdd;
+- (bool) isIDInJournalEntry : (NSString *) charID;
 @end
+
+// This is a method that checks if a dreamCharacter with a particular ID is in this journalEntry's array
+
 
 // Journal Edit update bundle
 @interface JournalEditBundle : NSObject
 {
-    
 }
 - (id) initWithBundle : (DreamJournalEntry *) Entry forIndex: (NSInteger) index;
 @property NSInteger EntryIndex;

@@ -45,6 +45,28 @@
 {
     [_dreamSigns addObject:dreamSignToAdd];
 }
+- (bool) isIDInJournalEntry:(NSString *)charID
+{
+    // This method will check if DreamCharacter ID is in this entry array
+    
+    if ([charID isEqualToString: @""] || charID == nil)
+    {
+        // User cannot give an empty string as a parameter for the dreamCharacter ID
+        NSException *e = [[NSException alloc] initWithName:@"InvalidArgumentException" reason:@"Character ID cannot be an empty string nor can it be nil" userInfo:nil];
+        @throw e;
+    }
+    bool isFnd = NO; // our toggle, local variable
+    for (int i = 0; i <= _dreamCharacters.count; i++)
+    {
+        if ([charID isEqualToString: [_dreamCharacters[i] charID]])
+        {
+            // If we've found a matching CharacterID
+            isFnd = YES;
+            break; // Exit out
+        }
+    }
+    return isFnd;
+}
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];

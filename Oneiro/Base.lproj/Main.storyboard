@@ -437,7 +437,7 @@
             </objects>
             <point key="canvasLocation" x="2274.4000000000001" y="-124.58770614692655"/>
         </scene>
-        <!--Add New Dream Char-->
+        <!--New Character-->
         <scene sceneID="8iX-r5-gJU">
             <objects>
                 <viewController id="cf4-eb-28Q" customClass="addNewDreamChar" sceneMemberID="viewController">
@@ -449,14 +449,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DC_Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-nj-IWF">
-                                <rect key="frame" x="102" y="91" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DC_Name" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-nj-IWF">
+                                <rect key="frame" x="113" y="91" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4JH-zt-aKJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4JH-zt-aKJ">
                                 <rect key="frame" x="113" y="219" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -485,7 +485,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ygn-Cz-hWo">
-                                <rect key="frame" x="102" y="166" width="176" height="29"/>
+                                <rect key="frame" x="113" y="168" width="240" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
@@ -494,21 +494,20 @@
                                     <segment title="Other"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyI-s0-7B0">
-                                <rect key="frame" x="202" y="368" width="84" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save / Add">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnSaveAdd_Tap:" destination="cf4-eb-28Q" eventType="touchUpInside" id="MNG-eb-g6U"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20727377459999999" green="0.15991506899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="New Character" id="alh-I9-rGi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FGy-bo-btk">
+                            <connections>
+                                <action selector="barBtnSave_Tap:" destination="cf4-eb-28Q" id="bPK-jR-N6f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btn_SaveAdd" destination="KyI-s0-7B0" id="Xqn-yX-Kxy"/>
+                        <outlet property="barBtn_Save" destination="FGy-bo-btk" id="SLb-Jo-1mr"/>
                         <outlet property="btn_genderPicker" destination="ygn-Cz-hWo" id="KrJ-FN-UlD"/>
                         <outlet property="txt_DCName" destination="3uY-nj-IWF" id="oK1-fK-vLF"/>
                         <outlet property="txt_Dc_Desc" destination="4JH-zt-aKJ" id="IQb-GR-R0J"/>

@@ -22,4 +22,5 @@
     @property (strong, nonatomic) IBOutlet UIButton *btn_SaveAdd;
 
     @property (weak, nonatomic) id <DreamCharacterAddProtocol> delegate;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *barBtn_Save;
 @end
