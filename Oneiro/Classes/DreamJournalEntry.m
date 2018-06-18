@@ -23,9 +23,9 @@
     _Title = entryTitle;
     _dreamCharacters = [[NSMutableArray alloc] init];
     _dreamSigns = [[NSMutableArray alloc] init]; // Initialize
-    
+    self.JournalEntryText = @"";
     // create a default dreamsign
-    dreamSign *defaultSign = [[dreamSign alloc] initWithSignCaption:@"default"];
+    NSString *defaultSign = @"default";
     [self AddDreamSign:defaultSign]; // Add the dream sign to the mutable array
     
     // Create a default dream character
@@ -40,8 +40,7 @@
     [_dreamCharacters addObject:charToAdd];
     NSLog(@"Added object %@", charToAdd.Name);
 }
-
-- (void) AddDreamSign: (dreamSign *) dreamSignToAdd
+- (void) AddDreamSign: (NSString *) dreamSignToAdd
 {
     [_dreamSigns addObject:dreamSignToAdd];
 }
@@ -66,6 +65,34 @@
         }
     }
     return isFnd;
+}
+- (void) AddDreamSignByArray:(NSArray *)arrayToAdd
+{
+    if (arrayToAdd != nil)
+    {
+        // This essentially replaces the dreamSign array
+        _dreamSigns = [NSMutableArray arrayWithArray:arrayToAdd];
+        NSLog(@"Updated dream sign array. It still needs to be saved.");
+    } else {
+        // Throw a null reference exception
+        NSException *NullReferenceException = [[NSException alloc] initWithName:@"Null Reference Exception" reason:@"In the AddDreamSignByArray method in the dreamJournalEntry class, a nil argument was passed" userInfo:nil];
+        
+        @throw NullReferenceException;
+    }
+}
+- (void) AddDreamSignByMutableArray:(NSMutableArray *)arrayToAdd
+{
+    if (arrayToAdd != nil)
+    {
+        // This essentially replaces the dreamSign array
+        _dreamSigns = [NSMutableArray arrayWithArray:arrayToAdd];
+        NSLog(@"Updated dream sign array. It still needs to be saved.");
+    } else {
+        // Throw a null reference exception
+        NSException *NullReferenceException = [[NSException alloc] initWithName:@"Null Reference Exception" reason:@"In the AddDreamSignByArray method in the dreamJournalEntry class, a nil argument was passed" userInfo:nil];
+        
+        @throw NullReferenceException;
+    }
 }
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
@@ -95,7 +122,7 @@
 
 @synthesize JournalEntryReference = _reference;
 @synthesize EntryIndex;
-- (id) initWithBundle:(DreamJournalEntry *)Entry forIndex:(NSInteger)index
+- (id) initWithJournalEntry:(DreamJournalEntry *)Entry forIndex:(NSInteger)index
 {
     _reference = Entry;
     EntryIndex = index;

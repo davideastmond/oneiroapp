@@ -29,6 +29,7 @@
         if ([obj isKindOfClass:[UIAlertAction class]])
         {
             [internalController addAction:obj]; // Add the action to the list of actions
+            
         } else {
             NSLog(@"Warning, one of the items in the action list is of an invalid type.");
         }

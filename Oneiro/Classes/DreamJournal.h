@@ -24,11 +24,12 @@
 
 // -----
 @property NSString *Title;
-@property (readonly) NSMutableArray *journalEntries;
+@property (readonly) NSMutableArray<DreamJournalEntry *> *journalEntries;
 - (NSString *) getJournalOwnerFullNameAsString; // This is going to return the journal owner's first and last name in string friendly format
 - (void) addEntryToJournal : (DreamJournalEntry *) entryToAdd;
 - (id) initWithTitleOwnerAndDefaultEntry : (NSString*) journalTitle : (JournalOwner *) jOwner;
 - (DreamJournalEntry *) getJournalEntryForEntryIndex : (int) index;
+- (void) setJournalEntryArray : (NSMutableArray *) entryArray;
 @end
 
 

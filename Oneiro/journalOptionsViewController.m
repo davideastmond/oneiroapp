@@ -43,7 +43,7 @@
         NSLog(@"Dream Journal has been deleted (test)");
        
         [JournalController deleteJournalArchieve:defaultJournalKey];
-        [_delegate didDeleteJournal]; // Call Delegate Function
+        [self.delegate didDeleteJournal]; // Call Delegate Function
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
@@ -73,12 +73,12 @@
         
         if (![alertbox.textFields[0].text isEqualToString:@""])
         {
-            DreamJournal *j = [JournalController getArchievedDreamJournal:refKey];
+            DreamJournal *j = [JournalController getArchievedDreamJournal:self.refKey];
             // Load the journal
             j.Title = alertbox.textFields[0].text; // Update the title
             
             // Save the data
-            [JournalController saveArchieveDreamJournal:j forWhatKey:refKey];
+            [JournalController saveArchieveDreamJournal:j forWhatKey:self.refKey];
             NSLog(@"User inputted: %@", alertbox.textFields[0].text);
             [UINotificationBanner showBannerWithMessage:@"Journal was renamed." forDuration:3];
         }

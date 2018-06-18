@@ -15,13 +15,13 @@
 {
     return (int) (min + arc4random_uniform(max - min + 1));
 }
-+ (NSString *) randomStringOfLength:(NSInteger)len
++ (NSString *) randomStringOfLength:(NSUInteger)len
 {
     if (len <= 0)
     {
         // Cannot be less than or equal to 0
-        NSException *ArgumentOutOfRangeException = [NSException exceptionWithName:@"ArgumentOutOfRangeException" reason:@"Length must be greater than 0" userInfo:nil];
-        @throw ArgumentOutOfRangeException;
+        NSException *InvalidArgumentException = [NSException exceptionWithName:@"InvalidArgumentException" reason:@"Length must be greater than 0" userInfo:nil];
+        @throw InvalidArgumentException;
     }
     
     NSMutableString *ReturnString = [[NSMutableString alloc] initWithString:@""];

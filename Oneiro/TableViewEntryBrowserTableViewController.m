@@ -69,7 +69,7 @@
 {
     NSLog(@"You tapped index %lu", [indexPath row]);
     // Create a JournalEditBundle object that contains the journalEntry[x] and x as index path row
-    JournalEditBundle *referencePass = [[JournalEditBundle alloc] initWithBundle:[_pJournalEntries objectAtIndex:[indexPath row]] forIndex:[indexPath row]];
+    JournalEditBundle *referencePass = [[JournalEditBundle alloc] initWithJournalEntry:[_pJournalEntries objectAtIndex:[indexPath row]] forIndex:[indexPath row]];
     
     [self performSegueWithIdentifier:@"segueEditEntry" sender:referencePass];
 }
@@ -100,6 +100,7 @@
         [_pJournalEntries removeObjectAtIndex:[indexPath row]];
        
         [UINotificationBanner showBannerWithMessage:@"Entry deleted." forDuration:2];
+        [JournalController saveJournalEntryForEntryArray:_pJournalEntries forJournalEntryKey:defaultJournalKey];
         [tableView reloadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -142,6 +143,20 @@
         editEntryController.journalUpdateDelegate = self; // set delegate
         editEntryController.edit_bundle = Bundle;
         editEntryController.mode = EditMode; // Set in edit mode
+    } else if ([segue.identifier isEqualToString:@"segueEditEntry01"])
+    {
+        // Cast the sender
+        DreamJournalEntry *refEntry = [[DreamJournalEntry alloc] initWithJournalEntryTitle:@""];
+        JournalEditBundle *Bundle = [[JournalEditBundle alloc] initWithJournalEntry:refEntry forIndex:-1];
+        //Bundle = (JournalEditBundle *) sender; // Cast
+        
+        // Segue edit mode
+        NSLog(@"Add Mode: %@", Bundle.JournalEntryReference.Title);
+        newJEntryViewController *editEntryController = [[newJEntryViewController alloc] init];
+        editEntryController = (newJEntryViewController *) segue.destinationViewController; // Cast
+        editEntryController.delegate = self; // set delegate
+        editEntryController.edit_bundle = Bundle;
+        editEntryController.mode = AddMode; // Set in edit mode
     }
 }
 - (void) JournalEntryWasUpdatedEdited:(JournalEditBundle *)editEntry
@@ -151,12 +166,21 @@
     NSLog(@"Got the call back for updated journal entry");
     NSLog(@"Edit %@", editEntry.JournalEntryReference.JournalEntryText);
     
-    //[_pJournalEntries replaceObjectAtIndex:editEntry.EntryIndex withObject:editEntry.JournalEntryReference];
     DreamJournal *tempJournal = [JournalController getArchievedDreamJournal:defaultJournalKey];
     [tempJournal.journalEntries replaceObjectAtIndex:editEntry.EntryIndex withObject:editEntry.JournalEntryReference];
     [JournalController saveArchieveDreamJournal:tempJournal forWhatKey:defaultJournalKey]; // Save
     [UINotificationBanner showBannerWithMessage:@"Entry was updated." forDuration:3];
+    _pJournalEntries = tempJournal.journalEntries; // TEST
+    [self.tableView reloadData];
     // Test
     
+}
+- (void) newJournalEntryCreated:(DreamJournalEntry *)createdEntry
+{
+    [self.navigationController popViewControllerAnimated:YES]; // Dismiss
+    // We need to save and add
+    [JournalController addJournalEntryToJournal:createdEntry forWhatKey:defaultJournalKey];
+    [self.tableView reloadData]; // Refresh
+    NSLog(@"New Entry was added");
 }
 @end

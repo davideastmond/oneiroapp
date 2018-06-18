@@ -15,6 +15,7 @@
 
 @implementation dcListViewController
 @synthesize dcList = _dcList; // Dream character list
+@synthesize eBundle = _eBundle;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,8 +33,6 @@
    _tbl_ListOfdcInEntry.delegate = self;
     
     // We need to populate the data of the current characters in this particular journalEntry
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,9 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -56,8 +53,6 @@
         addnew.delegate = self;
     }
 }
-
-
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -88,7 +83,12 @@
             
             cell.lblDcDesc.text = dc.description;
         }
-        NSLog(@"CellForIndex at path. Tag is %lu", tableView.tag);
+        
+        if ([dc.Name isEqualToString:@"default dream character"])
+        {
+            [cell.btnAdd setEnabled:NO];
+            
+        }
         return cell;
     } else
     {
@@ -100,7 +100,7 @@
         {
             cell = [[dcEntryListView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         }
-        DreamCharacter *indexChar = _dcListForJournalEntry[indexPath.row];
+        DreamCharacter *indexChar = _eBundle.JournalEntryReference.dreamCharacters[indexPath.row];
         cell.dcEntry_Name.text = indexChar.Name;
         cell.dcEntry_Desc.text = indexChar.description;
                                                    
@@ -114,29 +114,71 @@
     {
         return _dcList.count;
     } else {
-        return _dcListForJournalEntry.count;
+        return _eBundle.JournalEntryReference.dreamCharacters.count;
     }
 }
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView.tag == 1) {
+    if (tableView.tag == 1)
+    {
         return 65;
     } else {
         return 40;
     }
     //return [indexPath row] * 75;
 }
-- (IBAction)btnAddDC_Tap:(id)sender {
-    // Add completely new dreamCharacter object -
-    NSLog(@"Add DC - tap");
+
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.tag == 2)
+    {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
+- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Allow delete
+    if (tableView.tag == 2)
+    {
+        return UITableViewCellEditingStyleDelete;
+        
+    } else {
+        return UITableViewCellEditingStyleNone;
+    }
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.tag == 2)
+    {
+        if (editingStyle == UITableViewCellEditingStyleDelete)
+        {
+            // Delete the specific dreamCharacter in the jEntry[indexPath row] and refresh
+            [_eBundle.JournalEntryReference.dreamCharacters removeObjectAtIndex:[indexPath row]]; // Delete
+            
+            [tableView reloadData];
+            [UINotificationBanner showBannerWithMessage:@"DC Deleted" forDuration:3];
+            
+            // Save the changes immediately
+            [JournalController saveJournalEntryForEntryIndex:_eBundle.EntryIndex forEntry:_eBundle.JournalEntryReference Key:defaultJournalKey];
+            
+            // ** test
+            _dcList = [JournalController getAllDreamCharacters:defaultJournalKey];
+            [_dcTable reloadData];
+        }
+    }
+}
 - (void)DreamCharacterAdded:(DreamCharacter *)characterAdded {
     //
     [self.navigationController popViewControllerAnimated:YES];
-    NSLog(@"Got the DC to add");
+    NSLog(@"Got the DC to add %@", characterAdded.Name);
+    [_eBundle.JournalEntryReference.dreamCharacters addObject:characterAdded];
+    [_tbl_ListOfdcInEntry reloadData];
+    [UINotificationBanner showBannerWithMessage: @"Dream Character was added." forDuration: 3];
+    [_delegate JournalEntryCharacterAndEntryUpdates:_eBundle];
+    // We need to pass the updated JournalEntryReference back out via a delegate
 }
-
-
-
 @end

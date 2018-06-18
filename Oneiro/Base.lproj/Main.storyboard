@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MNv-Tv-SYz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MNv-Tv-SYz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -209,7 +210,196 @@
             </objects>
             <point key="canvasLocation" x="1460" y="-885"/>
         </scene>
-        <!--NewJ Entry View Controller-->
+        <!--Dream Signs-->
+        <scene sceneID="k37-dM-cbD">
+            <objects>
+                <viewController id="8AQ-0V-ktG" customClass="dsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="guH-BQ-Hk8"/>
+                        <viewControllerLayoutGuide type="bottom" id="YTb-2y-cCp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LnY-5c-eNw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These are the dream signs associated with this journal entry." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU8-j0-Hdq">
+                                <rect key="frame" x="0.0" y="72" width="359" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="f0y-nR-zZW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eg1-Fk-UTB">
+                                <rect key="frame" x="0.0" y="125" width="375" height="230"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="pel-li-RQR"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="ZCF-MM-Ncu" customClass="dsCellTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZCF-MM-Ncu" id="Pp2-5K-uiL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dreamSign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oco-zn-Fk0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dsLabel" destination="oco-zn-Fk0" id="beb-CX-BiN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.30135893485915494" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VU8-j0-Hdq" secondAttribute="trailing" constant="16" id="EAW-GH-oop"/>
+                            <constraint firstItem="Eg1-Fk-UTB" firstAttribute="leading" secondItem="LnY-5c-eNw" secondAttribute="leading" id="KVT-Ho-YSx"/>
+                            <constraint firstItem="Eg1-Fk-UTB" firstAttribute="top" secondItem="VU8-j0-Hdq" secondAttribute="bottom" constant="8" id="ST2-V5-qwi"/>
+                            <constraint firstItem="VU8-j0-Hdq" firstAttribute="leading" secondItem="LnY-5c-eNw" secondAttribute="leading" id="b0t-cz-s17"/>
+                            <constraint firstItem="VU8-j0-Hdq" firstAttribute="top" secondItem="guH-BQ-Hk8" secondAttribute="bottom" constant="8" id="b33-hV-012"/>
+                            <constraint firstAttribute="trailing" secondItem="Eg1-Fk-UTB" secondAttribute="trailing" id="bTa-Li-WJE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dream Signs" id="4fu-L0-vdd">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="zrv-J4-eXG">
+                                <connections>
+                                    <segue destination="UbT-dT-weD" kind="presentation" identifier="showAddDSPop" id="F22-vb-GfZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="save" id="yJ3-AE-vOj">
+                                <connections>
+                                    <action selector="clickSaveDS:" destination="8AQ-0V-ktG" id="L5v-ik-Gza"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dsTableView" destination="Eg1-Fk-UTB" id="ZIh-3J-eHm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIR-j8-mbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397.5999999999999" y="-885.60719640179911"/>
+        </scene>
+        <!--Add Dream Sign Pop UpVC-->
+        <scene sceneID="7fr-Ri-ELy">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="UbT-dT-weD" customClass="addDreamSignPopUpVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9qq-Vx-VSH"/>
+                        <viewControllerLayoutGuide type="bottom" id="gY7-eI-9tC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cXG-wD-tlt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETO-0u-gR3">
+                                <rect key="frame" x="0.0" y="152.5" width="375" height="362"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y9W-AD-fM5">
+                                        <rect key="frame" x="0.0" y="-14" width="375" height="231"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dsCell" id="0Xs-pO-STX" customClass="dsCellTableViewCell">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Xs-pO-STX" id="W2J-o4-P27">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dreamSign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9w-mY-K3G">
+                                                            <rect key="frame" x="13" y="12" width="83" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="dsDefault" destination="l9w-mY-K3G" id="KLQ-A3-rH7"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Custom:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkV-ro-NVH">
+                                        <rect key="frame" x="0.0" y="276" width="88" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2F5-7C-PUR">
+                                        <rect key="frame" x="77" y="267" width="298" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5r-3c-5zS">
+                                        <rect key="frame" x="0.0" y="324" width="189" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dimissCustomDreamSignVC:" destination="UbT-dT-weD" eventType="touchUpInside" id="bqY-Aa-uUl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xt0-KK-Y5K">
+                                        <rect key="frame" x="186" y="324" width="189" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.69685774159061031" green="0.74658550579237493" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="customDSAdded:" destination="UbT-dT-weD" eventType="touchUpInside" id="6zM-oD-jQP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20727377459999999" green="0.15991506899999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="362" id="ASL-eZ-akf"/>
+                                    <constraint firstAttribute="width" constant="375" id="xNo-lu-E5k"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.84894916373239437" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ETO-0u-gR3" firstAttribute="centerX" secondItem="cXG-wD-tlt" secondAttribute="centerX" id="MW7-xP-6sO"/>
+                            <constraint firstItem="ETO-0u-gR3" firstAttribute="centerY" secondItem="cXG-wD-tlt" secondAttribute="centerY" id="RyE-ZD-m7a"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="customDSTableView" destination="Y9W-AD-fM5" id="mh3-rz-Dh6"/>
+                        <outlet property="txtAddCustomDS" destination="2F5-7C-PUR" id="Whp-PS-qkH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTM-9y-BSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3189.5999999999999" y="-885.60719640179911"/>
+        </scene>
+        <!--Journal Entry-->
         <scene sceneID="V7s-50-gzl">
             <objects>
                 <viewController id="WUR-kT-ybV" customClass="newJEntryViewController" sceneMemberID="viewController">
@@ -249,23 +439,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEU-5p-vbO">
-                                <rect key="frame" x="271" y="509" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save &amp; Add">
-                                    <color key="titleColor" red="1" green="0.98315400109999995" blue="0.20046905879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="cmdSaveAdd_Tap:" destination="WUR-kT-ybV" eventType="touchUpInside" id="PUC-Sa-WFk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXq-5x-sBv">
-                                <rect key="frame" x="207" y="509" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="1" green="0.98315400109999995" blue="0.20046905879999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RH-x7-hxB">
                                 <rect key="frame" x="16" y="86" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -282,27 +455,43 @@
                                 <state key="normal" title="Dream Signs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="8AQ-0V-ktG" kind="show" identifier="segue_dsEdit" id="eoR-XV-Icf"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0eQ-Jv-MoF">
-                                <rect key="frame" x="0.0" y="187" width="375" height="285"/>
+                                <rect key="frame" x="0.0" y="187" width="375" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make sure to save your dream sign changes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-M2-LJg">
+                                <rect key="frame" x="16" y="373" width="335" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.015349114509999999" green="0.68725712439999997" blue="0.076657939519999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Journal Entry" id="paf-lZ-wBG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZpH-cT-lYg">
+                            <connections>
+                                <action selector="cmdSaveAdd_Tap:" destination="WUR-kT-ybV" id="28u-Bc-PEl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="cmdCancel" destination="HXq-5x-sBv" id="RwK-Sp-qC2"/>
-                        <outlet property="cmdSaveAdd" destination="PEU-5p-vbO" id="Xql-dT-Sox"/>
+                        <outlet property="saveReminderLabel" destination="vTE-M2-LJg" id="0zo-qw-A2g"/>
                         <outlet property="txtEntryText" destination="0eQ-Jv-MoF" id="obi-JN-Qbg"/>
                         <outlet property="txtEntryTitle" destination="zYT-sz-Mke" id="15z-uR-Oxu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2y-39-GM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="-125"/>
+            <point key="canvasLocation" x="1408.8" y="-109.29535232383809"/>
         </scene>
         <!--Dream Characters-->
         <scene sceneID="w5C-aC-BOy">
@@ -421,7 +610,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Dream Characters" largeTitleDisplayMode="never" id="EJM-0D-hpE">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="1Ml-Ro-0dj">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="1Ml-Ro-0dj">
                             <connections>
                                 <segue destination="cf4-eb-28Q" kind="show" identifier="add_dc00" id="JlN-d4-miP"/>
                             </connections>
@@ -435,7 +624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gv-St-zeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274.4000000000001" y="-124.58770614692655"/>
+            <point key="canvasLocation" x="2398" y="-109"/>
         </scene>
         <!--New Character-->
         <scene sceneID="8iX-r5-gJU">
@@ -515,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUG-8H-qW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3180" y="-125.4872563718141"/>
+            <point key="canvasLocation" x="3220" y="-109"/>
         </scene>
         <!--Title-->
         <scene sceneID="3Ij-9k-3UR">
@@ -561,7 +750,13 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="7JN-gZ-NLT"/>
+                    <navigationItem key="navigationItem" title="Title" id="7JN-gZ-NLT">
+                        <barButtonItem key="rightBarButtonItem" title="+ New Entry" id="enU-1g-Q6e">
+                            <connections>
+                                <segue destination="WUR-kT-ybV" kind="show" identifier="segueEditEntry01" id="KFC-tV-NL1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableViewTitle" destination="7JN-gZ-NLT" id="NhP-3s-UFz"/>
@@ -570,7 +765,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEl-rU-vzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="-125"/>
+            <point key="canvasLocation" x="652" y="-109"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ce4-us-YjJ">
@@ -680,7 +875,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CFd-jS-1wT"/>
+        <segue reference="KFC-tV-NL1"/>
         <segue reference="mIs-r9-YeL"/>
     </inferredMetricsTieBreakers>
 </document>

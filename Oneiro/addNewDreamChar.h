@@ -19,7 +19,7 @@
     @property (strong, nonatomic) IBOutlet UISegmentedControl *btn_genderPicker;
     @property (strong, nonatomic) IBOutlet UITextField *txt_DCName;
     @property (strong, nonatomic) IBOutlet UITextView *txt_Dc_Desc;
-    @property (strong, nonatomic) IBOutlet UIButton *btn_SaveAdd;
+
 
     @property (weak, nonatomic) id <DreamCharacterAddProtocol> delegate;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *barBtn_Save;

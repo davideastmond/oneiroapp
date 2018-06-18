@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E7205902203881A600BC7348 /* JournalController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7205901203881A600BC7348 /* JournalController.m */; };
 		E72059052038E3EF00BC7348 /* newJEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E72059042038E3EF00BC7348 /* newJEntryViewController.m */; };
-		E7205908203B222E00BC7348 /* dreamSign.m in Sources */ = {isa = PBXBuildFile; fileRef = E7205907203B222E00BC7348 /* dreamSign.m */; };
 		E720590B203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E720590A203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m */; };
 		E720590E203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E720590D203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m */; };
 		E7268D882033899A00051E8C /* newJournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7268D872033899A00051E8C /* newJournalViewController.m */; };
@@ -18,6 +17,7 @@
 		E73322ED204C31B300E290F4 /* dcListViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E73322EC204C31B300E290F4 /* dcListViewCellTableViewCell.m */; };
 		E73322F0204DD9F500E290F4 /* Randoms.m in Sources */ = {isa = PBXBuildFile; fileRef = E73322EF204DD9F500E290F4 /* Randoms.m */; };
 		E73322F32054C31E00E290F4 /* addNewDreamChar.m in Sources */ = {isa = PBXBuildFile; fileRef = E73322F22054C31D00E290F4 /* addNewDreamChar.m */; };
+		E7332334205C573100E290F4 /* dreamsigns.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7332333205C573100E290F4 /* dreamsigns.txt */; };
 		E75C211D201E95AA00E7F5C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C211C201E95AA00E7F5C9 /* ViewController.m */; };
 		E75C2120201FE7EB00E7F5C9 /* AlertBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C211F201FE7EB00E7F5C9 /* AlertBox.m */; };
 		E76BFC9F1F81B0BA008FB694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFC9E1F81B0BA008FB694 /* main.m */; };
@@ -32,6 +32,9 @@
 		E76BFCD81F81D5C8008FB694 /* DreamJournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCD71F81D5C8008FB694 /* DreamJournalEntry.m */; };
 		E76BFCDB1F85A6AA008FB694 /* DreamCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */; };
 		E7B242BE204203D7008318AA /* UINotificationBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B242BD204203D7008318AA /* UINotificationBanner.m */; };
+		E7DE8EB52068291900DB7BAD /* dsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DE8EB42068291900DB7BAD /* dsViewController.m */; };
+		E7DE8EB82068329C00DB7BAD /* dsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DE8EB72068329C00DB7BAD /* dsCellTableViewCell.m */; };
+		E7DE8EBB206BCB2A00DB7BAD /* addDreamSignPopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DE8EBA206BCB2A00DB7BAD /* addDreamSignPopUpVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +59,6 @@
 		E7205901203881A600BC7348 /* JournalController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JournalController.m; sourceTree = "<group>"; };
 		E72059032038E3EF00BC7348 /* newJEntryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newJEntryViewController.h; sourceTree = "<group>"; };
 		E72059042038E3EF00BC7348 /* newJEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newJEntryViewController.m; sourceTree = "<group>"; };
-		E7205906203B222E00BC7348 /* dreamSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dreamSign.h; sourceTree = "<group>"; };
-		E7205907203B222E00BC7348 /* dreamSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dreamSign.m; sourceTree = "<group>"; };
 		E7205909203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewEntryBrowserTableViewController.h; sourceTree = "<group>"; };
 		E720590A203B98BD00BC7348 /* TableViewEntryBrowserTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewEntryBrowserTableViewController.m; sourceTree = "<group>"; };
 		E720590C203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JournalEntryCellForTableViewTableViewCell.h; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		E73322EF204DD9F500E290F4 /* Randoms.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Randoms.m; sourceTree = "<group>"; };
 		E73322F12054C31D00E290F4 /* addNewDreamChar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addNewDreamChar.h; sourceTree = "<group>"; };
 		E73322F22054C31D00E290F4 /* addNewDreamChar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addNewDreamChar.m; sourceTree = "<group>"; };
+		E7332333205C573100E290F4 /* dreamsigns.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dreamsigns.txt; path = ../../../../../Desktop/dreamsigns.txt; sourceTree = "<group>"; };
 		E75C211B201E95AA00E7F5C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E75C211C201E95AA00E7F5C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E75C211E201FE7EB00E7F5C9 /* AlertBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertBox.h; sourceTree = "<group>"; };
@@ -101,6 +103,12 @@
 		E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamCharacter.m; sourceTree = "<group>"; };
 		E7B242BC204203D7008318AA /* UINotificationBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UINotificationBanner.h; sourceTree = "<group>"; };
 		E7B242BD204203D7008318AA /* UINotificationBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UINotificationBanner.m; sourceTree = "<group>"; };
+		E7DE8EB32068291900DB7BAD /* dsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dsViewController.h; sourceTree = "<group>"; };
+		E7DE8EB42068291900DB7BAD /* dsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dsViewController.m; sourceTree = "<group>"; };
+		E7DE8EB62068329C00DB7BAD /* dsCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dsCellTableViewCell.h; sourceTree = "<group>"; };
+		E7DE8EB72068329C00DB7BAD /* dsCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dsCellTableViewCell.m; sourceTree = "<group>"; };
+		E7DE8EB9206BCB2A00DB7BAD /* addDreamSignPopUpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addDreamSignPopUpVC.h; sourceTree = "<group>"; };
+		E7DE8EBA206BCB2A00DB7BAD /* addDreamSignPopUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addDreamSignPopUpVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,17 +159,17 @@
 		E76BFC9C1F81B0BA008FB694 /* Oneiro */ = {
 			isa = PBXGroup;
 			children = (
+				E77CB837207ED23400B73FFD /* Classes */,
+				E7332333205C573100E290F4 /* dreamsigns.txt */,
 				E76BFCA01F81B0BA008FB694 /* AppDelegate.h */,
 				E76BFCA11F81B0BA008FB694 /* AppDelegate.m */,
-				E76BFCD31F81D50F008FB694 /* DreamJournal.h */,
-				E76BFCD41F81D50F008FB694 /* DreamJournal.m */,
-				E76BFCD61F81D5C8008FB694 /* DreamJournalEntry.h */,
-				E76BFCD71F81D5C8008FB694 /* DreamJournalEntry.m */,
-				E7205906203B222E00BC7348 /* dreamSign.h */,
-				E7205907203B222E00BC7348 /* dreamSign.m */,
-				E76BFCD91F85A6AA008FB694 /* DreamCharacter.h */,
-				E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */,
 				E76BFCA61F81B0BA008FB694 /* Main.storyboard */,
+				E7DE8EB9206BCB2A00DB7BAD /* addDreamSignPopUpVC.h */,
+				E7DE8EBA206BCB2A00DB7BAD /* addDreamSignPopUpVC.m */,
+				E7DE8EB32068291900DB7BAD /* dsViewController.h */,
+				E7DE8EB42068291900DB7BAD /* dsViewController.m */,
+				E7DE8EB62068329C00DB7BAD /* dsCellTableViewCell.h */,
+				E7DE8EB72068329C00DB7BAD /* dsCellTableViewCell.m */,
 				E73322F12054C31D00E290F4 /* addNewDreamChar.h */,
 				E73322F22054C31D00E290F4 /* addNewDreamChar.m */,
 				E73322E8204BABC300E290F4 /* dcListViewController.h */,
@@ -176,16 +184,10 @@
 				E72059042038E3EF00BC7348 /* newJEntryViewController.m */,
 				E7268D8920378B4B00051E8C /* journalOptionsViewController.h */,
 				E7268D8A20378B4B00051E8C /* journalOptionsViewController.m */,
-				E7205900203881A600BC7348 /* JournalController.h */,
-				E7205901203881A600BC7348 /* JournalController.m */,
 				E7268D862033899A00051E8C /* newJournalViewController.h */,
 				E7268D872033899A00051E8C /* newJournalViewController.m */,
 				E75C211B201E95AA00E7F5C9 /* ViewController.h */,
 				E75C211C201E95AA00E7F5C9 /* ViewController.m */,
-				E73322EE204DD9F500E290F4 /* Randoms.h */,
-				E73322EF204DD9F500E290F4 /* Randoms.m */,
-				E75C211E201FE7EB00E7F5C9 /* AlertBox.h */,
-				E75C211F201FE7EB00E7F5C9 /* AlertBox.m */,
 				E76BFCAC1F81B0BA008FB694 /* Assets.xcassets */,
 				E76BFCAE1F81B0BA008FB694 /* LaunchScreen.storyboard */,
 				E76BFCB11F81B0BA008FB694 /* Info.plist */,
@@ -221,6 +223,25 @@
 				E76BFCC71F81B0BA008FB694 /* Info.plist */,
 			);
 			path = OneiroUITests;
+			sourceTree = "<group>";
+		};
+		E77CB837207ED23400B73FFD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E76BFCD61F81D5C8008FB694 /* DreamJournalEntry.h */,
+				E76BFCD71F81D5C8008FB694 /* DreamJournalEntry.m */,
+				E76BFCD31F81D50F008FB694 /* DreamJournal.h */,
+				E76BFCD41F81D50F008FB694 /* DreamJournal.m */,
+				E76BFCD91F85A6AA008FB694 /* DreamCharacter.h */,
+				E76BFCDA1F85A6AA008FB694 /* DreamCharacter.m */,
+				E7205900203881A600BC7348 /* JournalController.h */,
+				E7205901203881A600BC7348 /* JournalController.m */,
+				E73322EE204DD9F500E290F4 /* Randoms.h */,
+				E73322EF204DD9F500E290F4 /* Randoms.m */,
+				E75C211E201FE7EB00E7F5C9 /* AlertBox.h */,
+				E75C211F201FE7EB00E7F5C9 /* AlertBox.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +306,7 @@
 		E76BFC921F81B0BA008FB694 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "David Eastmond";
 				TargetAttributes = {
 					E76BFC991F81B0BA008FB694 = {
@@ -333,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76BFCB01F81B0BA008FB694 /* LaunchScreen.storyboard in Resources */,
+				E7332334205C573100E290F4 /* dreamsigns.txt in Resources */,
 				E76BFCAD1F81B0BA008FB694 /* Assets.xcassets in Resources */,
 				E76BFCA81F81B0BA008FB694 /* Main.storyboard in Resources */,
 			);
@@ -366,6 +388,8 @@
 				E75C211D201E95AA00E7F5C9 /* ViewController.m in Sources */,
 				E76BFCD81F81D5C8008FB694 /* DreamJournalEntry.m in Sources */,
 				E73322F32054C31E00E290F4 /* addNewDreamChar.m in Sources */,
+				E7DE8EB82068329C00DB7BAD /* dsCellTableViewCell.m in Sources */,
+				E7DE8EB52068291900DB7BAD /* dsViewController.m in Sources */,
 				E76BFCA21F81B0BA008FB694 /* AppDelegate.m in Sources */,
 				E76BFCDB1F85A6AA008FB694 /* DreamCharacter.m in Sources */,
 				E76BFC9F1F81B0BA008FB694 /* main.m in Sources */,
@@ -375,8 +399,8 @@
 				E72059052038E3EF00BC7348 /* newJEntryViewController.m in Sources */,
 				E76BFCAB1F81B0BA008FB694 /* Oneiro.xcdatamodeld in Sources */,
 				E7B242BE204203D7008318AA /* UINotificationBanner.m in Sources */,
+				E7DE8EBB206BCB2A00DB7BAD /* addDreamSignPopUpVC.m in Sources */,
 				E73322F0204DD9F500E290F4 /* Randoms.m in Sources */,
-				E7205908203B222E00BC7348 /* dreamSign.m in Sources */,
 				E720590E203B991700BC7348 /* JournalEntryCellForTableViewTableViewCell.m in Sources */,
 				E7268D8B20378B4B00051E8C /* journalOptionsViewController.m in Sources */,
 			);
@@ -447,6 +471,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -454,6 +479,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -502,6 +528,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -509,6 +536,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

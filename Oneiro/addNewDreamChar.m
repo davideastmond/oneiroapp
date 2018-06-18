@@ -23,10 +23,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)btnSaveAdd_Tap:(id)sender {
-
-    
-}
 - (IBAction)barBtnSave_Tap:(id)sender
 {
     // Validation

@@ -13,7 +13,8 @@
 #import "JournalController.h"
 #import "UINotificationBanner.h"
 @protocol EditUpdateJournalEntryDelegate;
-@interface TableViewEntryBrowserTableViewController : UITableViewController <EditUpdateJournalEntryDelegate>
+@protocol NewJournalEntryDelegate;
+@interface TableViewEntryBrowserTableViewController : UITableViewController <EditUpdateJournalEntryDelegate, NewJournalEntryDelegate>
 {
    
 }

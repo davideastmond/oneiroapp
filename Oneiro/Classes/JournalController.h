@@ -10,6 +10,7 @@
 #import "DreamJournal.h"
 #import "UINotificationBanner.h"
 #import "DreamJournalEntry.h"
+
 @class DreamJournal;
 @class DreamJournalEntry;
 
@@ -31,4 +32,7 @@
 + (void) resetJournalArchieve : (NSString *) forWhatKey;
 + (NSString *) getJournalTitle : (NSString *) forWhatKey;
 + (NSMutableArray *) getAllDreamCharacters : (NSString *) forWhatKey;
++ (void) saveJournalEntryForEntryIndex : (NSInteger) index forEntry : (DreamJournalEntry *) entry Key : (NSString *) forKey;
++ (void) saveJournalEntryForEntryArray : (NSMutableArray *) DreamJournalEntryArray forJournalEntryKey : (NSString *) forKey;
++ (NSMutableArray <NSString *>*) loadDefaultDreamSignDatabase; // Read from data file
 @end

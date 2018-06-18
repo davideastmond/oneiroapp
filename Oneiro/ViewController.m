@@ -22,20 +22,15 @@
     [super viewDidLoad];
     /*
     // Do any additional setup after loading the view.
-
-     
-     
     // Check if a journal exists
     */
     //[self DeleteJournalEntryFromSystemForKey:defaultJournalKey]; // Test to default
     //NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:defaultJournalKey];
+    //NSString *path = [NSBundle.mainBundle pathForResource:@"dreamsigns" ofType:@"txt"];
+   // NSArray *arr = [JournalController loadDefaultDreamSignDatabase];
     
-    // *** test
-    //** end test
-    
+   //[JournalController deleteJournalArchieve:defaultJournalKey];
     DreamJournal *Journal;
-
-    
     if ([JournalController isSavedJournalPresent:defaultJournalKey] == false)
     {
         // The data is nil, so create a new entry
@@ -49,7 +44,7 @@
     } else
     {
         Journal = [JournalController getArchievedDreamJournal:defaultJournalKey];
-        NSLog(@"Data was correctly found. Reading from file");
+        //NSLog(@"Data was correctly found. Reading from file");
         [_cmdCreateNewJournal setHidden:YES];
         // Journal = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         
@@ -101,11 +96,11 @@
     [self.navigationController popViewControllerAnimated:YES];
     if (info == nil)
     {
-        NSLog(@"User clicked cancel. Delegate");
+        //NSLog(@"User clicked cancel. Delegate");
         [self enableStartScreenOptions:NO];
     } else
     {
-        NSLog(@"Received delegate object and saved file");
+        //NSLog(@"Received delegate object and saved file");
         [UINotificationBanner showBannerWithMessage:@"Journal was created" forDuration:3];
         [self enableStartScreenOptions:YES];
     }
@@ -117,7 +112,7 @@
     [self.navigationController popViewControllerAnimated:YES]; //Dismiss
     [self enableStartScreenOptions:NO]; // User is forced only to create a new journal
     NSLog(@"Deleted Journal Delegate");
-    [UINotificationBanner showBannerWithMessage:@"Journal was deleted." forDuration:3  ];
+    [UINotificationBanner showBannerWithMessage:@"Journal was deleted." forDuration:3];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

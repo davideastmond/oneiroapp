@@ -31,8 +31,6 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [nc addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
-    
 }
 - (void) keyboardWillShow: (NSNotification *) note
 {
@@ -54,23 +52,38 @@
 - (IBAction)cmdSaveAdd_Tap:(id)sender {
     
     // We either add a new journal entry, or we'll be editing an existing, depending on the mode
-    
+    /*
     if ([_txtEntryTitle.text isEqualToString:@""])
     {
         AlertBox *errorAlert = [[AlertBox alloc] initWithDefaultErrorMessage:@"Please enter a journal entry title"];
         [self presentViewController:errorAlert.internalController animated:YES completion:nil];
         return;
-    }
+    } */
     if (self.mode == AddMode)
     {
         // Create a new journal entry, validate the input and call the
         //delegate method
         // Add Mode
         // Create the journal object
-        DreamJournalEntry *entryToAdd = [[DreamJournalEntry alloc] initWithJournalEntryTitle: _txtEntryTitle.text];
-        entryToAdd.JournalEntryText = _txtEntryText.text;
-        [_delegate newJournalEntryCreated:entryToAdd]; // Call the delegate
         
+        if (edit_bundle.JournalEntryReference != nil)
+        {
+            NSLog(@"Journal was NOT nil. Processing delegate function");
+            self.edit_bundle.JournalEntryReference.JournalEntryText = _txtEntryText.text;
+            self.edit_bundle.JournalEntryReference.Title = _txtEntryTitle.text;
+            [_delegate newJournalEntryCreated: self.edit_bundle.JournalEntryReference]; // Call the delegate
+        } else {
+            
+            // Create a new reference
+            DreamJournalEntry *ReferenceEntry = [[DreamJournalEntry alloc] initWithJournalEntryTitle:_txtEntryText.text];
+            ReferenceEntry.JournalEntryText = _txtEntryText.text;
+            ReferenceEntry.Title = _txtEntryTitle.text;
+            self.edit_bundle = [[JournalEditBundle alloc] initWithJournalEntry:ReferenceEntry forIndex:-1];
+            
+            
+            NSLog(@"Initialized a new Journal Entry Bundle");
+            [_delegate newJournalEntryCreated:edit_bundle.JournalEntryReference]; // Call the delegate
+        }
     } else {
         // We're in Update mode - updating an existing journal entry
         self.edit_bundle.JournalEntryReference.Title = _txtEntryTitle.text; // Get the title from the text box
@@ -96,6 +109,22 @@
         //_txtEntryTitle.text = edit_bundle.JournalEntryReference.Title;
     }
 }
+- (void)JournalEntryCharacterAndEntryUpdates:(JournalEditBundle *)referenceBundle {
+    // Update the edit bundle
+    NSLog(@"Received journal Entry Important updates");
+    
+    self.edit_bundle = referenceBundle;
+}
+//MARK: Delegate Function
+- (void) returnedDreamSigns : (NSMutableArray *) signs
+{
+    // Delegate method
+    NSLog(@"NewJournalEntry - Dream Sign delegate received");
+    [self.navigationController popViewControllerAnimated:YES];
+    [_saveReminderLabel setHidden:NO]; // Show the save reminder
+    [self.edit_bundle.JournalEntryReference AddDreamSignByMutableArray:signs];
+    
+}
 /*
 #pragma mark - Navigation
 */
@@ -110,9 +139,36 @@
         // This is the segue that will open up the DreamCharacter list
         dcListViewController* nextDCCtrl = [[dcListViewController alloc] init];
         nextDCCtrl = (dcListViewController *) segue.destinationViewController; // Cast
-        nextDCCtrl.dcListForJournalEntry = edit_bundle.JournalEntryReference.dreamCharacters; // Send
+        nextDCCtrl.dcListForJournalEntry = self.edit_bundle.JournalEntryReference.dreamCharacters; // Send
+        
+        if (self.edit_bundle == nil) {
+            // Edit Bundle needs to be instantiated
+            // Create a new journal Entry Reference
+            NSLog(@"Edit_bundle was nil. Instantiating...");
+            DreamJournalEntry *tEntry = [[DreamJournalEntry alloc] initWithJournalEntryTitle:_txtEntryTitle.text];
+            tEntry.JournalEntryText = _txtEntryText.text;
+            tEntry.Title = _txtEntryTitle.text;
+            
+            self.edit_bundle = [[JournalEditBundle alloc] initWithJournalEntry:tEntry forIndex:-1];
+            
+        }
+        nextDCCtrl.eBundle = self.edit_bundle; // Set the edit bundle
+        nextDCCtrl.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"segue_dsEdit"])
+    {
+        // Create an edit bundle reference
+        if (self.edit_bundle == nil)
+        {
+            DreamJournalEntry *tEntry = [[DreamJournalEntry alloc] initWithJournalEntryTitle:_txtEntryTitle.text];
+            tEntry.JournalEntryText = _txtEntryText.text;
+            tEntry.Title = _txtEntryTitle.text;
+            self.edit_bundle = [[JournalEditBundle alloc] initWithJournalEntry:tEntry forIndex:-1];
+            NSLog(@"Preparing to show dream signs. Edit bundle is nil, so created reference");
+        }
+        // Dream sign screen, which shows the current dream signs and allows users to add or delete
+        dsViewController *controller = [[dsViewController alloc] init];
+        controller = (dsViewController *) segue.destinationViewController;
+        controller.dsListForJournalEntry = edit_bundle.JournalEntryReference.dreamSigns;
     }
 }
-
-
 @end

@@ -13,5 +13,5 @@
 
 @interface Randoms : NSObject
     + (int) randomIntegerBetween : (int) min and: (int) max;
-    + (NSString *) randomStringOfLength : (NSInteger) len;
+    + (NSString *) randomStringOfLength : (NSUInteger) len;
 @end

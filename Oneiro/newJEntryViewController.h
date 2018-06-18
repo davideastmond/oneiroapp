@@ -12,8 +12,11 @@
 #import "DreamJournalEntry.h"
 #import "AlertBox.h"
 #import "dcListViewController.h"
+#import "dsViewController.h"
 @class newJEntryViewController;
 @class JournalEditBundle;
+@protocol GetNewJournalEntryUpdates;
+@protocol dreamSignsDelegateProtocol;
 
 typedef enum {
     AddMode =1, EditMode =2
@@ -26,7 +29,7 @@ typedef enum {
 @protocol EditUpdateJournalEntryDelegate <NSObject>
 - (void) JournalEntryWasUpdatedEdited : (JournalEditBundle *) editEntry;
 @end
-@interface newJEntryViewController : UIViewController
+@interface newJEntryViewController : UIViewController <GetNewJournalEntryUpdates, dreamSignsDelegateProtocol>
 {
     UITapGestureRecognizer *tapRecognizer;
 }
@@ -35,6 +38,7 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEntryTitle;
 @property (weak, nonatomic) IBOutlet UITextView *txtEntryText;
+@property (strong, nonatomic) IBOutlet UILabel *saveReminderLabel;
 
 @property NSString *jKey;
 @property (weak, nonatomic) id <NewJournalEntryDelegate> delegate;

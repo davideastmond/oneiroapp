@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DreamCharacter.h"
-#import "dreamSign.h"
+
 @class DreamCharacter;
+
 
 // Journal Entries
 @interface DreamJournalEntry : NSObject <NSCoding>
@@ -18,8 +19,8 @@
 @property (readonly) NSDate *CreateDate;
 @property NSString *Title;
 
-@property (readonly) NSMutableArray *dreamCharacters; // This holds an array of dreamCharacters
-@property (readonly) NSMutableArray *dreamSigns; // Holds list of dream signs
+@property (readonly) NSMutableArray <DreamCharacter *> *dreamCharacters; // This holds an array of dreamCharacters
+@property (readonly) NSMutableArray <NSString *> *dreamSigns; // Holds list of dream signs
 @property NSString *JournalEntryText;
 
 // Constructor
@@ -27,18 +28,20 @@
 
 // We need a method that adds dream characters to the array
 - (void) AddDreamCharacter : (DreamCharacter *) charToAdd;
-- (void) AddDreamSign : (dreamSign *) dreamSignToAdd;
-- (bool) isIDInJournalEntry : (NSString *) charID;
+- (void) AddDreamSign : (NSString *) dreamSignToAdd;
+- (void) AddDreamSignByArray : (NSArray *) arrayToAdd;
+- (void) AddDreamSignByMutableArray: (NSMutableArray *) arrayToAdd;
+- (bool) isIDInJournalEntry : (NSString *) charID; // This is a method that checks if a dreamCharacter with a particular ID is in this journalEntry's array
 @end
 
-// This is a method that checks if a dreamCharacter with a particular ID is in this journalEntry's array
+
 
 
 // Journal Edit update bundle
 @interface JournalEditBundle : NSObject
 {
 }
-- (id) initWithBundle : (DreamJournalEntry *) Entry forIndex: (NSInteger) index;
+- (id) initWithJournalEntry : (DreamJournalEntry *) Entry forIndex: (NSInteger) index;
 @property NSInteger EntryIndex;
-@property (weak, nonatomic) DreamJournalEntry *JournalEntryReference;
+@property (strong, nonatomic) DreamJournalEntry *JournalEntryReference;
 @end

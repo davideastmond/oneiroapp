@@ -115,7 +115,17 @@
     // self = [aDecoder decodeObjectForKey: kObjectKey];
     return self;
 }
-@end
+- (void) setJournalEntryArray:(NSMutableArray *)entryArray
+{
+    if (entryArray != nil)
+    {
+        _journalEntries = entryArray;
+    } else {
+        NSException *NullReferenceException = [[NSException alloc] initWithName:@"NullReferenceException" reason:@"Journal Entry Array is null" userInfo:nil]; @throw NullReferenceException;
+                                               
+    }
+}
+ @end
 
 @implementation JournalOwner
 
