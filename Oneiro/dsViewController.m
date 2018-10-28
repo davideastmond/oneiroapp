@@ -101,7 +101,4 @@
     // Need to call a delegate
     [_delegate returnedDreamSigns:dsListForJournalEntry]; // Call delegate
 }
-
-
-
 @end

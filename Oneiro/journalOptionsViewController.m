@@ -19,6 +19,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAnywhere:)];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [nc addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+- (void) keyboardWillShow: (NSNotification *) note
+{
+    [self.view addGestureRecognizer: tapRecognizer];
+    
+}
+- (void) keyboardWillHide: (NSNotification *) note
+{
+    [self.view removeGestureRecognizer:tapRecognizer];
+}
+- (void) didTapAnywhere: (UITapGestureRecognizer *) recognizer
+{
+    // Dismiss the keyboard
+    [_txtJournalTitle resignFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning {

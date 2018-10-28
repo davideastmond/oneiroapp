@@ -15,6 +15,9 @@
 - (void) didDeleteJournal;
 @end
 @interface journalOptionsViewController : UIViewController
+{
+    UIGestureRecognizer *tapRecognizer;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *cmdCancel;
 @property (weak, nonatomic) IBOutlet UITextField *txtJournalTitle;
