@@ -18,10 +18,11 @@
     NSInteger selectedRow;
     NSMutableArray *selectedIndex;
     UITapGestureRecognizer *tapRecognizer;
+    NSMutableArray <NSString *>* defaultDreamSignArray;
     BOOL addUpdate;
 }
 @property (strong, nonatomic) IBOutlet UITableView *customDSTableView;
 @property (strong, nonatomic) IBOutlet UITextField *txtAddCustomDS;
-@property NSMutableArray <NSString *>* defaultDreamSignArray;
+
 @property (weak, nonatomic) id <dreamSignCustomDelegateProtocol> delegate;
 @end

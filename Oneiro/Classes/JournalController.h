@@ -33,6 +33,10 @@
 + (NSString *) getJournalTitle : (NSString *) forWhatKey;
 + (NSMutableArray *) getAllDreamCharacters : (NSString *) forWhatKey;
 + (void) saveJournalEntryForEntryIndex : (NSInteger) index forEntry : (DreamJournalEntry *) entry Key : (NSString *) forKey;
-+ (void) saveJournalEntryForEntryArray : (NSMutableArray *) DreamJournalEntryArray forJournalEntryKey : (NSString *) forKey;
++ (void) saveJournalEntryForEntryID:(NSString *)e_entry_ID forEntry:(DreamJournalEntry *)entry Key:(NSString *)forKey;
 + (NSMutableArray <NSString *>*) loadDefaultDreamSignDatabase; // Read from data file
++ (NSMutableArray <DreamJournalEntry *>*) getEntriesWithTag : (NSString *) j_tag journalKey:(NSString *) forWhatKey;
++ (NSMutableArray <DreamJournalEntry *>*) getAllEntries : (NSString *) journalKey;
++ (NSInteger) getIndexFromJournalEntryID : (NSString *) p_entry_ID;
++ (void) saveJournalEntryForEntryArray:(NSMutableArray *)DreamJournalEntryArray forJournalEntryKey:(NSString *)forKey;
 @end

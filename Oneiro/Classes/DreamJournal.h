@@ -30,6 +30,7 @@
 - (id) initWithTitleOwnerAndDefaultEntry : (NSString*) journalTitle : (JournalOwner *) jOwner;
 - (DreamJournalEntry *) getJournalEntryForEntryIndex : (int) index;
 - (void) setJournalEntryArray : (NSMutableArray *) entryArray;
+
 @end
 
 

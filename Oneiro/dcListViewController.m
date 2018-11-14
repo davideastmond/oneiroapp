@@ -163,7 +163,7 @@
             [UINotificationBanner showBannerWithMessage:@"DC Deleted" forDuration:3];
             
             // Save the changes immediately
-            [JournalController saveJournalEntryForEntryIndex:_eBundle.EntryIndex forEntry:_eBundle.JournalEntryReference Key:defaultJournalKey];
+            [JournalController saveJournalEntryForEntryID:_eBundle.JournalEntryReference.EntryID forEntry:_eBundle.JournalEntryReference Key:defaultJournalKey];
             
             // ** test
             _dcList = [JournalController getAllDreamCharacters:defaultJournalKey];

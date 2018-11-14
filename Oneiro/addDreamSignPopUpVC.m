@@ -13,7 +13,7 @@
 @end
 
 @implementation addDreamSignPopUpVC
-@synthesize  defaultDreamSignArray;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -117,9 +117,12 @@
         
     } else
     {
-        [defaultDreamSignArray addObject:_txtAddCustomDS.text];
-        // Add
         NSLog(@"Added %@", _txtAddCustomDS.text);
+        NSMutableArray *t_array = [NSMutableArray arrayWithArray: defaultDreamSignArray];
+        [t_array addObject:_txtAddCustomDS.text];
+        defaultDreamSignArray = t_array;
+        // Add
+        
         [_customDSTableView reloadData];
         _txtAddCustomDS.text = @"";
         [selectedIndex addObject:@(YES)]; // NEW CODE:

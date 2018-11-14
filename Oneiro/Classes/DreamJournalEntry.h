@@ -21,6 +21,8 @@
 
 @property (readonly) NSMutableArray <DreamCharacter *> *dreamCharacters; // This holds an array of dreamCharacters
 @property (readonly) NSMutableArray <NSString *> *dreamSigns; // Holds list of dream signs
+@property (readonly) NSString *EntryID; // Each journal entry has a unique ID - basically random characters
+
 @property NSString *JournalEntryText;
 
 // Constructor
@@ -32,6 +34,7 @@
 - (void) AddDreamSignByArray : (NSArray *) arrayToAdd;
 - (void) AddDreamSignByMutableArray: (NSMutableArray *) arrayToAdd;
 - (bool) isIDInJournalEntry : (NSString *) charID; // This is a method that checks if a dreamCharacter with a particular ID is in this journalEntry's array
+- (void) setEntryID:(NSString *)EntryID;
 @end
 
 
@@ -42,6 +45,7 @@
 {
 }
 - (id) initWithJournalEntry : (DreamJournalEntry *) Entry forIndex: (NSInteger) index;
+
 @property NSInteger EntryIndex;
 @property (strong, nonatomic) DreamJournalEntry *JournalEntryReference;
 @end

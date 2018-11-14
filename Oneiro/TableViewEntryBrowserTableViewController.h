@@ -16,8 +16,10 @@
 @protocol NewJournalEntryDelegate;
 @interface TableViewEntryBrowserTableViewController : UITableViewController <EditUpdateJournalEntryDelegate, NewJournalEntryDelegate>
 {
-   
+    BOOL lucidEditMode;
 }
 @property (strong, nonatomic) IBOutlet UINavigationItem *tableViewTitle;
+
 @property NSMutableArray *pJournalEntries;
+- (IBAction)switch_toggled:(UISwitch *)sender;
 @end

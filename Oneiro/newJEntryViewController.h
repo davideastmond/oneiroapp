@@ -46,6 +46,7 @@ typedef enum {
 @property JournalEntryMode mode;
 
 @property (strong, nonatomic) JournalEditBundle *edit_bundle;
+@property (strong, nonatomic) IBOutlet UILabel *lblEntry_ID;
 
 
 @end

@@ -11,5 +11,6 @@
 @interface JournalEntryCellForTableViewTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *lblEntryDate;
 @property (strong, nonatomic) IBOutlet UILabel *lblEntryTitle;
+@property (strong, nonatomic) IBOutlet UILabel *lblEntry_ID;
 
 @end

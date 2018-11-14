@@ -93,10 +93,12 @@
 }
 - (void) viewWillAppear:(BOOL)animated
 {
+    NSLog(@"View will appear Entry ID is %@", edit_bundle.JournalEntryReference.EntryID);
     if (self.mode == AddMode)
     {
         // Update the button's caption
         [_cmdSaveAdd setTitle:@"Save/Add" forState:UIControlStateNormal];
+        //_lbl_entry_id.text = edit_bundle.JournalEntryReference.EntryID;
     } else {
         [_cmdSaveAdd setTitle:@"Update" forState:UIControlStateNormal];
         
@@ -106,7 +108,7 @@
         // _txtEntryText.text = edit_bundle.JournalEntryReference.JournalEntryText;
         
         [_txtEntryTitle setText:edit_bundle.JournalEntryReference.Title];
-        //_txtEntryTitle.text = edit_bundle.JournalEntryReference.Title;
+        [_lblEntry_ID setText:edit_bundle.JournalEntryReference.EntryID];
     }
 }
 - (void)JournalEntryCharacterAndEntryUpdates:(JournalEditBundle *)referenceBundle {

@@ -10,16 +10,16 @@
 #import "JournalEntryCellForTableViewTableViewCell.h"
 #define defaultJournalKey @"journal"
 
-@interface TableViewEntryBrowserTableViewController ()
+/* @interface TableViewEntryBrowserTableViewController ()
 
-@end
+@end */
 
 @implementation TableViewEntryBrowserTableViewController
 @synthesize pJournalEntries = _pJournalEntries;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
+    
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -61,17 +61,26 @@
     cell.lblEntryTitle.text = _entry.Title;
     [tFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     cell.lblEntryDate.text = [tFormatter stringFromDate:_entry.CreateDate];
-    
+    cell.lblEntry_ID.text = _entry.EntryID;
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"You tapped index %lu", [indexPath row]);
-    // Create a JournalEditBundle object that contains the journalEntry[x] and x as index path row
-    JournalEditBundle *referencePass = [[JournalEditBundle alloc] initWithJournalEntry:[_pJournalEntries objectAtIndex:[indexPath row]] forIndex:[indexPath row]];
-    
-    [self performSegueWithIdentifier:@"segueEditEntry" sender:referencePass];
+    NSLog(@"You tapped index %d", [indexPath row]);
+    if (lucidEditMode == NO)
+    {
+        // User has toggled the Lucid filter to no (default), so display the entries as normal
+        // Create a JournalEditBundle object that contains the journalEntry[x] and x as index path row
+        JournalEditBundle *referencePass = [[JournalEditBundle alloc] initWithJournalEntry:[_pJournalEntries objectAtIndex:[indexPath row]] forIndex:[indexPath row]];
+        [self performSegueWithIdentifier:@"segueEditEntry" sender:referencePass];
+    } else {
+        // We're in Lucid mode, so we need to extract the entry_ID from the cell that is selected, and then use that to pull up the correct JournalEntry, as the selectedIndex will not match up with the index of the journalEntry we want in the main, unfiltered journal. Thus, we must search for the particular jorunal entry by jorunal entry ID
+        DreamJournalEntry *inq_entry = [_pJournalEntries objectAtIndex:[indexPath row]];
+        JournalEditBundle *referencePass = [[JournalEditBundle alloc] initWithJournalEntry:inq_entry forIndex:[indexPath row]];
+        [self performSegueWithIdentifier:@"segueEditEntry" sender:referencePass];
+        NSLog(@"EntryID is %@ ", inq_entry.EntryID);
+    }
 }
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -106,23 +115,6 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -156,7 +148,7 @@
         editEntryController = (newJEntryViewController *) segue.destinationViewController; // Cast
         editEntryController.delegate = self; // set delegate
         editEntryController.edit_bundle = Bundle;
-        editEntryController.mode = AddMode; // Set in edit mode
+        editEntryController.mode = AddMode; // Set in Add mode
     }
 }
 - (void) JournalEntryWasUpdatedEdited:(JournalEditBundle *)editEntry
@@ -183,4 +175,25 @@
     [self.tableView reloadData]; // Refresh
     NSLog(@"New Entry was added");
 }
+- (IBAction)switch_toggled:(UISwitch *)sender
+{
+    // If the state is off, then we will show all entries.
+    // If the switch state is on, then we only filter for entries that have a lucid tag
+    
+    if ([sender isOn])
+    {
+        // _pentries controlls the journal entries that the tableviewcontroller displays
+        lucidEditMode = YES;
+        _pJournalEntries = [JournalController getEntriesWithTag:@"lucid" journalKey:defaultJournalKey];
+        [self.tableView reloadData];
+    } else
+    {
+        // The default entries
+        lucidEditMode = NO;
+        
+        _pJournalEntries = [JournalController getAllEntries:defaultJournalKey];
+        [self.tableView reloadData];
+    }
+}
+
 @end

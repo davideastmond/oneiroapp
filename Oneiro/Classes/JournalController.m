@@ -8,6 +8,7 @@
 
 #import "JournalController.h"
 #define backUpJournal @"bckup"
+#define defaultJournalKey @"journal"
 
 @implementation JournalController
 
@@ -18,6 +19,14 @@
     DreamJournal *returnJournal;
     
     returnJournal = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    // Scan to see if any journal entries have nil for their EntryID
+    [JournalController VerifyEntryIDForJournal:returnJournal];
+    
+    // Reopen the Journal from archieve
+    data = [[NSUserDefaults standardUserDefaults] objectForKey:forWhatKey];
+    returnJournal = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
     return returnJournal;
 }
 + (void) saveArchieveDreamJournal : (DreamJournal *) journalToSave
@@ -148,7 +157,31 @@
     DreamJournal *newJ = [[DreamJournal alloc] initWithTitleOwnerAndDefaultEntry:@"New Default Debug Joural" :owner];
     [self saveArchieveDreamJournal: newJ forWhatKey:forWhatKey];// Replace
 }
-+ (void) saveJournalEntryForEntryIndex:(NSInteger)index forEntry:(DreamJournalEntry *)entry Key:(NSString *)forKey
++ (NSInteger) getIndexFromJournalEntryID : (NSString *) p_entry_ID
+{
+    // This function: input a journal entry ID, and we'll get back a index >= 0
+    // return - 1 if nothing found
+    
+    DreamJournal *J = [self getArchievedDreamJournal:defaultJournalKey];
+    
+    if (J != nil)
+    {
+        // We have a valid dream journal.
+        NSInteger index_count = 0;
+        
+        for (DreamJournalEntry *e in J.journalEntries)
+        {
+            if ([e.EntryID isEqualToString:p_entry_ID])
+            {
+                return index_count;
+            } else {
+                index_count += 1; // Increment the count
+            }
+        }
+    }
+    return -1;
+}
++ (void) saveJournalEntryForEntryID:(NSString *)e_entry_ID forEntry:(DreamJournalEntry *)entry Key:(NSString *)forKey
 {
     // Saves a particular journal entry after changes are made
     // get the journal
@@ -158,7 +191,11 @@
         NSException *err = [[NSException alloc] initWithName:@"JournalNotFoundException" reason:@"The key supplied was not found, and has returned a nill reference" userInfo:nil];
         @throw err;
     }
-    if (index  < 0 || index > J.journalEntries.count)
+    
+    // Find index by journal_entry_id
+    NSInteger index = [JournalController getIndexFromJournalEntryID:e_entry_ID];
+    
+    if (index  < 0)
     {
         NSException *err = [[NSException alloc] initWithName:@"InvalidJournalIndex" reason:@"The index is out of range." userInfo:nil];
         @throw err;
@@ -166,7 +203,7 @@
     [J.journalEntries replaceObjectAtIndex:index withObject:entry];
     [self saveArchieveDreamJournal:J forWhatKey:forKey];
 }
-+ (NSMutableArray <NSString *>*) loadDefaultDreamSignDatabase
++ (NSArray <NSString *>*) loadDefaultDreamSignDatabase
 {
     // Read the data file
     NSString *path = [NSBundle.mainBundle pathForResource:@"dreamsigns" ofType:@"txt"];
@@ -199,9 +236,9 @@
     
     DreamJournal *Jrn = [self getArchievedDreamJournal:@"journal"];
     NSArray *getAllSigns = [self getAllJournalDreamSignsForJournal:Jrn];
-    returnValue = [NSMutableArray arrayWithArray:getAllSigns];
+    NSArray *final_return = [returnValue arrayByAddingObjectsFromArray:getAllSigns];
    
-    return returnValue;
+    return final_return;
 }
 + (NSArray *) getAllJournalDreamSignsForJournal : (DreamJournal *) refJournal
 {
@@ -254,4 +291,50 @@
         // Error
     }
 }
++ (NSMutableArray <DreamJournalEntry *>*) getEntriesWithTag:(NSString *)j_tag journalKey : (NSString *) forWhatKey
+{
+    // Retrieve the journal
+    DreamJournal *mj = [JournalController getArchievedDreamJournal: forWhatKey];
+    NSMutableArray <DreamJournalEntry *>* ret_array = [NSMutableArray array]; // This will be returned
+    if (mj != nil)
+    {
+        // Cycle through the entries
+        for (DreamJournalEntry *e_entry in mj.journalEntries)
+        {
+            if ([e_entry.dreamSigns containsObject:@"lucid"])
+            {
+                [ret_array addObject:e_entry];
+            }
+        }
+    }
+    return ret_array;
+}
++ (NSMutableArray <DreamJournalEntry *>*) getAllEntries:(NSString *)journalKey
+{
+    DreamJournal *mj = [JournalController getArchievedDreamJournal: journalKey];
+    
+    return mj.journalEntries;
+}
++ (void) VerifyEntryIDForJournal : (DreamJournal *)journal
+{
+    // This method cycles through all the entries and for any that has nil EntryiD
+    // will create an ID for them
+    int replacementCount = 0;
+    for (DreamJournalEntry *e_entry in journal.journalEntries)
+    {
+        if (e_entry.EntryID == nil)
+        {
+            NSString *rndGen = [Randoms randomStringOfLength:6];
+            [e_entry setEntryID:rndGen];
+            replacementCount += 1; // Increment
+        }
+    }
+    NSLog(@"%d entries were updated", replacementCount);
+    if (replacementCount > 0)
+    {
+        // Save the journal
+        [JournalController saveArchieveDreamJournal:journal forWhatKey:defaultJournalKey];
+    }
+}
+
  @end

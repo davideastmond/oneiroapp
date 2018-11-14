@@ -15,6 +15,7 @@
 @synthesize Title = _Title;
 @synthesize CreateDate = _CreateDate;
 @synthesize dreamSigns = _dreamSigns;
+@synthesize EntryID;
 
 - (id) initWithJournalEntryTitle:(NSString *)entryTitle
 {
@@ -31,6 +32,9 @@
     // Create a default dream character
     DreamCharacter *defaultChar = [[DreamCharacter alloc] initWithNameAndGender:@"default dream character" :male];
     [self AddDreamCharacter:defaultChar];
+    
+    // Create a unique ID
+    EntryID = [Randoms randomStringOfLength:6];
     return self;
 }
 
@@ -106,6 +110,7 @@
     self.Title = [aDecoder decodeObjectForKey:@"title"];
     _CreateDate = [aDecoder decodeObjectForKey: @"createDate"];
     _dreamSigns = [aDecoder decodeObjectForKey:@"dreamsigns"];
+    EntryID = [aDecoder decodeObjectForKey:@"entryID"];
     return self;
 }
 - (void) encodeWithCoder:(NSCoder *)aCoder
@@ -115,6 +120,11 @@
     [aCoder encodeObject:self.Title forKey:@"title"];
     [aCoder encodeObject:self.CreateDate forKey:@"createDate"];
     [aCoder encodeObject:self.dreamSigns forKey:@"dreamsigns"];
+    [aCoder encodeObject:EntryID forKey:@"entryID"];
+}
+- (void) setEntryID:(NSString *)p_EntryID
+{
+    EntryID = p_EntryID;
 }
 @end
 
